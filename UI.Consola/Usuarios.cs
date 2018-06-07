@@ -29,30 +29,28 @@ namespace UI.Consola
             Console.WriteLine("4. Modificar");
             Console.WriteLine("5. Eliminar");
             Console.WriteLine("6. Salir");
-            ConsoleKeyInfo op = Console.ReadKey();
-            Console.WriteLine("\n");
-            switch(op.Key)
-            {
-                case ConsoleKey.D1:
-                    this.ListadoGeneral();
-                    break;
-                case ConsoleKey.D2:
-                    //this.Consultar();
-                    break;
-                case ConsoleKey.D3:
-                    //this.Agregar();
-                    break;
-                case ConsoleKey.D4:
-                   // this.Modificar();
-                    break;
-                case ConsoleKey.D5:
-                   // this.Eliminar();
-                    break;
-                case ConsoleKey.D6:
-                    break;
-            }
 
-            Console.ReadLine();
+            ConsoleKeyInfo op = Console.ReadKey();
+    
+            switch (op.Key)
+                {
+                    case ConsoleKey.D1:
+                        this.ListadoGeneral();
+                        break;
+                    case ConsoleKey.D2:
+                        this.Consultar();
+                        break;
+                    case ConsoleKey.D3:
+                        //this.Agregar();
+                        break;
+                    case ConsoleKey.D4:
+                        this.Modificar();
+                        break;
+                    case ConsoleKey.D5:
+                        // this.Eliminar();
+                        break;
+                }
+            Console.ReadKey();
         }
 
         public void ListadoGeneral()
@@ -75,5 +73,86 @@ namespace UI.Consola
             Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
             Console.WriteLine(" ");
         }
+
+        public void Consultar()
+        {
+
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el Id del usuario a consultar");
+                int id = int.Parse(Console.ReadLine());
+                this.MostrarDatos(UsuarioNegocio.GetOne(id));
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine();
+                Console.WriteLine("La id ingresada debe ser un numero entero", fe);
+            }
+            catch (NullReferenceException nre)
+            {
+                Console.WriteLine();
+                Console.WriteLine("No existe un usuario con esa id", nre);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Presione una tecla para continuar");
+                Console.ReadKey();
+            }
+        }
+
+        public void Modificar()
+        {
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("Ingresar el id del usuario a modificar");
+                int id = int.Parse(Console.ReadLine());
+                Usuario usuario = usuarioNegocio.GetOne(id);
+                Console.WriteLine("Ingrese nombre");
+                usuario.Nombre = Console.ReadLine();
+                Console.WriteLine("Ingrese apellido");
+                usuario.Apellido = Console.ReadLine();
+                Console.WriteLine("Ingrese nombre de usuario");
+                usuario.NombreUsuario = Console.ReadLine();
+                Console.WriteLine("Ingrese clave");
+                usuario.Clave = Console.ReadLine();
+                Console.WriteLine("Ingrese email");
+                usuario.Email = Console.ReadLine();
+                Console.WriteLine("Ingrese habilitacion del usuario: 1-Si/otro-No");
+                usuario.Habilitado = (Console.ReadLine() == "1");
+                usuario.State = BusinessEntity.States.Modified;
+                usuarioNegocio.Save(usuario);
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine();
+                Console.WriteLine("La id ingresada debe ser un numero entero", fe);
+            }
+            catch (NullReferenceException nre)
+            {
+                Console.WriteLine();
+                Console.WriteLine("No existe un usuario con esa id", nre);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Presione una tecla para continuar");
+                Console.ReadKey();
+            }
+            
+
+        }
+
+
     }
 }
