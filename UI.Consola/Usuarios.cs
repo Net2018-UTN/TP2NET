@@ -41,7 +41,7 @@ namespace UI.Consola
                         this.Consultar();
                         break;
                     case ConsoleKey.D3:
-                        //this.Agregar();
+                        this.Agregar();
                         break;
                     case ConsoleKey.D4:
                         this.Modificar();
@@ -50,7 +50,7 @@ namespace UI.Consola
                         // this.Eliminar();
                         break;
                 }
-            Console.ReadKey();
+           
         }
 
         public void ListadoGeneral()
@@ -60,6 +60,7 @@ namespace UI.Consola
             {
                 MostrarDatos(usr);
             }
+            Console.ReadKey();
         }
 
         public void MostrarDatos (Usuario usr)
@@ -149,7 +150,28 @@ namespace UI.Consola
                 Console.WriteLine("Presione una tecla para continuar");
                 Console.ReadKey();
             }
-            
+        }
+
+        public void Agregar()
+        {
+            Entidades.Usuario usuario = new Usuario();
+            Console.Clear();
+            Console.WriteLine("Ingrese nombre");
+            usuario.Nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese apellido");
+            usuario.Apellido = Console.ReadLine();
+            Console.WriteLine("Ingrese nombre de usuario");
+            usuario.NombreUsuario = Console.ReadLine();
+            Console.WriteLine("Ingrese clave");
+            usuario.Clave = Console.ReadLine();
+            Console.WriteLine("Ingrese email");
+            usuario.Email = Console.ReadLine();
+            Console.WriteLine("Ingrese habilitacion del usuario: 1-Si/otro-No");
+            usuario.Habilitado = (Console.ReadLine() == "1" );
+            usuario.State = BusinessEntity.States.New;
+            usuarioNegocio.Save(usuario);
+            Console.WriteLine();
+            Console.WriteLine("Id = {0}", usuario.Id);
 
         }
 
