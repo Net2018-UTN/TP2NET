@@ -1,7 +1,4 @@
-# TP2NET
-
-#Integrantes:
-
-#De Frenza, Julian
-#Fabio, Guido
-#Rueda, Juan Andres
+#Integrantes: 
+De Frenza, Julian
+Fabio, Guido 
+Rueda, Juan Andres
