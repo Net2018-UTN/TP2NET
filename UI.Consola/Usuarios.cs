@@ -22,17 +22,20 @@ namespace UI.Consola
         }
         public void Menu()
         {
-            Console.WriteLine("Elija una opción:");
-            Console.WriteLine("1. Listado general");
-            Console.WriteLine("2. Consulta");
-            Console.WriteLine("3. Agregar");
-            Console.WriteLine("4. Modificar");
-            Console.WriteLine("5. Eliminar");
-            Console.WriteLine("6. Salir");
+            ConsoleKeyInfo op;
+            do
+            {
+                Console.WriteLine("Elija una opción:");
+                Console.WriteLine("1. Listado general");
+                Console.WriteLine("2. Consulta");
+                Console.WriteLine("3. Agregar");
+                Console.WriteLine("4. Modificar");
+                Console.WriteLine("5. Eliminar");
+                Console.WriteLine("6. Salir");
 
-            ConsoleKeyInfo op = Console.ReadKey();
-    
-            switch (op.Key)
+                op = Console.ReadKey();
+
+                switch (op.Key)
                 {
                     case ConsoleKey.D1:
                         this.ListadoGeneral();
@@ -47,10 +50,10 @@ namespace UI.Consola
                         this.Modificar();
                         break;
                     case ConsoleKey.D5:
-                        // this.Eliminar();
+                        this.Eliminar();
                         break;
                 }
-           
+            } while (op.Key != ConsoleKey.D6);
         }
 
         public void ListadoGeneral()
@@ -174,6 +177,41 @@ namespace UI.Consola
             Console.WriteLine("Id = {0}", usuario.Id);
 
         }
+
+        public void Eliminar()
+        {
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el Id del usuario a eliminar");
+                int id = int.Parse(Console.ReadLine());
+                Usuario usuario = new Usuario();
+                usuario = usuarioNegocio.GetOne(id);
+                usuario.State = BusinessEntity.States.Deleted;
+                usuarioNegocio.Delete(id);
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine();
+                Console.WriteLine("La id ingresada debe ser un numero entero", fe);
+            }
+            catch (NullReferenceException nre)
+            {
+                Console.WriteLine();
+                Console.WriteLine("No existe un usuario con esa id", nre);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Presione una tecla para continuar");
+                Console.ReadKey();
+            }
+        }
+
 
 
     }
