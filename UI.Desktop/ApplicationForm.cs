@@ -22,7 +22,7 @@ namespace UI.Desktop
 
         }
         public enum ModoForm {Alta,Baja,Modificacion,Consulta};
-        private ModoForm modo;
+        public ModoForm modo;
 
         public ModoForm Modo { get => modo; set => modo = value; }
         public virtual void MapearDeDatos() { }

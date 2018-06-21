@@ -44,9 +44,9 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
             this.txtEmail.Text = this.UsuarioActual.Email;
-            if (Modo.Equals("Baja")){
+            if (Modo == ModoForm.Baja){
                 this.btnAceptar.Text = "Eliminar";
-            } else if(Modo.Equals("Consulta"))
+            } else if(Modo == ModoForm.Consulta)
             {
                 this.btnAceptar.Text = "Aceptar";
             } else
@@ -56,13 +56,12 @@ namespace UI.Desktop
         }
         public override void MapearADatos()
         {
-            if (Modo.Equals("Alta"))
+            if (Modo == ModoForm.Alta)
             {
                 usuarioActual = new Usuario();
 
             }
 
-            this.UsuarioActual.Id = int.Parse(this.txtID.Text);
             this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
             this.UsuarioActual.Nombre = this.txtNombre.Text;
             this.UsuarioActual.Apellido = this.txtApellido.Text;
@@ -70,7 +69,25 @@ namespace UI.Desktop
             this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
             this.UsuarioActual.Email = this.txtEmail.Text;
             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-           // this.UsuarioActual.State = this.Modo;
+            if (Modo == ModoForm.Alta)
+            {
+                this.usuarioActual.State = BusinessEntity.States.New;
+
+            }
+            else if (Modo == ModoForm.Baja)
+            {
+                this.usuarioActual.State = BusinessEntity.States.Deleted;
+            }
+            else if (Modo == ModoForm.Consulta)
+            {
+                this.usuarioActual.State = BusinessEntity.States.Unmodified;
+
+            }
+            else
+            {
+                this.usuarioActual.State = BusinessEntity.States.Modified;
+
+            }
         }
         public override void GuardarCambios()
         {
@@ -81,7 +98,7 @@ namespace UI.Desktop
         {
             if(this.txtNombre.Text == "" || this.txtApellido.Text == "" || this.txtClave.Text == ""
                 || this.txtConfirmarClave.Text == "" || this.txtEmail.Text == "" || this.txtUsuario.Text == ""
-                || this.txtClave != this.txtConfirmarClave)
+                || this.txtClave.Text != this.txtConfirmarClave.Text)
             {
                 this.Notificar("Error", "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
