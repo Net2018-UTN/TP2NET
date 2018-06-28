@@ -68,14 +68,21 @@ namespace UI.Consola
 
         public void MostrarDatos (Usuario usr)
         {
-            Console.WriteLine("Usuario: {0}", usr.Id);
-            Console.WriteLine("\t\tNombre: {0}", usr.Nombre);
-            Console.WriteLine("\t\tApellido: {0}", usr.Apellido);
-            Console.WriteLine("\t\tNombre de Usuario: {0}", usr.NombreUsuario);
-            Console.WriteLine("\t\tClave: {0}", usr.Clave);
-            Console.WriteLine("\t\tEmail: {0}", usr.Email);
-            Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
-            Console.WriteLine(" ");
+            try
+            {
+                Console.WriteLine("Usuario: {0}", usr.Id);
+                Console.WriteLine("\t\tNombre: {0}", usr.Nombre);
+                Console.WriteLine("\t\tApellido: {0}", usr.Apellido);
+                Console.WriteLine("\t\tNombre de Usuario: {0}", usr.NombreUsuario);
+                Console.WriteLine("\t\tClave: {0}", usr.Clave);
+                Console.WriteLine("\t\tEmail: {0}", usr.Email);
+                Console.WriteLine("\t\tHabilitado: {0}", usr.Habilitado);
+                Console.WriteLine(" ");
+            }
+            catch(Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
         }
 
         public void Consultar()
