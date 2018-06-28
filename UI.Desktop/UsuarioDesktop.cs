@@ -43,6 +43,7 @@ namespace UI.Desktop
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario; 
             this.txtEmail.Text = this.UsuarioActual.Email;
             if (Modo == ModoForm.Baja){
                 this.btnAceptar.Text = "Eliminar";
@@ -133,6 +134,16 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

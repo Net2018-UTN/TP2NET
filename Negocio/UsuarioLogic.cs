@@ -24,17 +24,41 @@ namespace Negocio
 
         public List<Usuario> GetAll()
         {
-            return usuarioData.GetAll();
+            try
+            {
+                return usuarioData.GetAll();
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
         }
 
         public void Save(Usuario usu)
         {
-            usuarioData.Save(usu);
+            try
+            {
+                usuarioData.Save(usu);
+            }
+            catch(Exception Ex)
+            {
+                throw Ex;
+            }
+           
         }
 
         public void Delete(int id)
         {
-            usuarioData.Delete(id);
+            try
+            {
+                usuarioData.Delete(id);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+           
         }       
     }
 }

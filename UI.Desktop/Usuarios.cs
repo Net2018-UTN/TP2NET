@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocio;
+using System.Data.SqlClient;
 
 namespace UI.Desktop
 {
@@ -32,8 +33,15 @@ namespace UI.Desktop
     
          public void Listar()
          {
-            UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+            try
+            {
+                UsuarioLogic ul = new UsuarioLogic();
+                this.dgvUsuarios.DataSource = ul.GetAll();
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
          }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -60,10 +68,15 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int ID = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).Id;
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formUsuario.ShowDialog();
-            this.Listar();
+            if (this.dgvUsuarios.SelectedRows != null)
+            {
+                int ID = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).Id;
+                UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formUsuario.ShowDialog();
+                this.Listar();
+            }
+           
+
 
         }
 
