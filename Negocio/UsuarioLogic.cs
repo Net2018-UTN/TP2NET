@@ -24,7 +24,6 @@ namespace Negocio
 
         public List<Usuario> GetAll()
         {
-<<<<<<< HEAD
             try
             {
                 return usuarioData.GetAll();
@@ -33,14 +32,10 @@ namespace Negocio
             {
                 throw Ex;
             }
-=======
-            return usuarioData.GetAll();
->>>>>>> ddb8c777793596006ed7d852127319bd1d7041b3
         }
 
         public void Save(Usuario usu)
         {
-<<<<<<< HEAD
             try
             {
                 usuarioData.Save(usu);
@@ -49,15 +44,11 @@ namespace Negocio
             {
                 throw Ex;
             }
-           
-=======
-            usuarioData.Save(usu);
->>>>>>> ddb8c777793596006ed7d852127319bd1d7041b3
+   
         }
 
         public void Delete(int id)
         {
-<<<<<<< HEAD
             try
             {
                 usuarioData.Delete(id);
@@ -66,11 +57,6 @@ namespace Negocio
             {
                 throw Ex;
             }
-
-           
-=======
-            usuarioData.Delete(id);
->>>>>>> ddb8c777793596006ed7d852127319bd1d7041b3
         }       
     }
 }
