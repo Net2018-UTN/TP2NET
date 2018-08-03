@@ -36,7 +36,7 @@ namespace Negocio
 
         public void Save(Planes pl)
         {
-
+          
         }
 
         public void Delete(int id)
@@ -50,5 +50,6 @@ namespace Negocio
                 throw Ex;
             }
         }
+
     }
 }

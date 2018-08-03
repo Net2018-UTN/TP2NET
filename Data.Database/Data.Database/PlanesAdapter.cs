@@ -22,7 +22,7 @@ namespace Data.Database
                 while(drPLanes.Read())
                 {
                     Planes pl = new Planes();
-                    pl.IdPlan = (int)drPLanes["id_plan"];
+                    pl.Id = (int)drPLanes["id_plan"];
                     pl.DescPlan = (string)drPLanes["desc_plan"];
                     pl.IdEspecialidad = (int)drPLanes["id_especialidad"];
 
@@ -55,7 +55,7 @@ namespace Data.Database
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
                 if (drPlanes.Read())
                 {
-                    pl.IdPlan = (int)drPlanes["id_plan"];
+                    pl.Id = (int)drPlanes["id_plan"];
                     pl.DescPlan = (string)drPlanes["desc_plan"];
                     pl.IdEspecialidad = (int)drPlanes["id_especialidad"];
                 }
@@ -92,7 +92,71 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
+        }
 
+        protected void Insert(Planes pl)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdInsert = new SqlCommand(
+                    "insert into planes (desc_plan, id_especialidad)" +
+                    "values (@desc_plan, @id_especialidad)" +
+                    "select @@identity", sqlConn);
+                cmdInsert.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = pl.IdEspecialidad;
+                cmdInsert.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = pl.DescPlan;
+                pl.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
+            }
+            catch(Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al ingresar usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
+        protected void Update(Planes pl)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUpdate = new SqlCommand(
+                    "update planes set desc_plan = @descPlan, id_especialidad = @idEspecialidad" +
+                    "where id_plan = @id", sqlConn);
+                cmdUpdate.Parameters.Add("@descPlan", SqlDbType.VarChar, 50).Value = pl.DescPlan;
+                cmdUpdate.Parameters.Add("@idEspecialidad", SqlDbType.Int).Value = pl.Id;
+                cmdUpdate.ExecuteNonQuery();
+            }
+            catch(Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al modificar datos del plan", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        } 
+
+
+        public void Save(Planes pl)
+        {
+            if(pl.State == BusinessEntity.States.Deleted)
+            {
+                this.Delete(pl.Id);
+            }
+            else if(pl.State == BusinessEntity.States.New)
+            {
+                this.Insert(pl);
+            }
+            else if(pl.State == BusinessEntity.States.Modified)
+            {
+                this.Update(pl);
+            }
+            pl.State = BusinessEntity.States.Unmodified;
         }
     }
 }
