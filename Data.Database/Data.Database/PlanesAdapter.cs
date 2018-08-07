@@ -124,10 +124,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand(
-                    "update planes set desc_plan = @descPlan, id_especialidad = @idEspecialidad" +
-                    "where id_plan = @id", sqlConn);
+                    "update planes set desc_plan = @descPlan, id_especialidad = @idEspecialidad where id_plan = @id", sqlConn);
                 cmdUpdate.Parameters.Add("@descPlan", SqlDbType.VarChar, 50).Value = pl.DescPlan;
-                cmdUpdate.Parameters.Add("@idEspecialidad", SqlDbType.Int).Value = pl.Id;
+                cmdUpdate.Parameters.Add("@idEspecialidad", SqlDbType.Int).Value = pl.IdEspecialidad;
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = pl.Id;
                 cmdUpdate.ExecuteNonQuery();
             }
             catch(Exception Ex)

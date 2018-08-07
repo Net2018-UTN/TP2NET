@@ -8,11 +8,9 @@ namespace Entidades
 {
     public class Planes : BusinessEntity
     {
-        //int idPlan;
         string descPlan;
         int idEspecialidad;
 
-        //public int IdPlan { get => idPlan; set => idPlan = value; }
         public string DescPlan { get => descPlan; set => descPlan = value; }
         public int IdEspecialidad { get => idEspecialidad; set => idEspecialidad = value; }
     }

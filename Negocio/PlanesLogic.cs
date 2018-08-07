@@ -36,7 +36,7 @@ namespace Negocio
 
         public void Save(Planes pl)
         {
-          
+            planesData.Save(pl);
         }
 
         public void Delete(int id)
