@@ -155,6 +155,7 @@
     <None Include="Properties\DataSources\Data.Database.Adapter.datasource" />
     <None Include="Properties\DataSources\Data.Database.UsuarioAdapter.datasource" />
     <None Include="Properties\DataSources\Negocio.BusinessLogic.datasource" />
+    <None Include="Properties\DataSources\Negocio.ComisionLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.PlanesLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.UsuarioLogic.datasource" />
     <None Include="Properties\Settings.settings">
