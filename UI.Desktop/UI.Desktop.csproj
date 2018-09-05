@@ -69,6 +69,18 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comision.Designer.cs">
+      <DependentUpon>Comision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComisionDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComisionDesktop.Designer.cs">
+      <DependentUpon>ComisionDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision.resx">
+      <DependentUpon>Comision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>
