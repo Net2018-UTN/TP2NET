@@ -36,7 +36,7 @@ namespace Data.Database
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error. No se pueden recuperar los planes", Ex);
+                Exception ExcepcionManejada = new Exception("Error. No se pueden recuperar las comisiones", Ex);
             }
             finally
             {
@@ -51,21 +51,22 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select * from planes where id_plan = @id", SqlConn);
-                cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlCommand cmdComision = new SqlCommand("select * from comisiones where id_plan = @idComision", SqlConn);
+                cmdComision.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision.Read())
                 {
-                    co.Id = (int)drPlanes["id_plan"];
-                    co.DescPlan = (string)drComision["desc_plan"];
-                    co.IdEspecialidad = (int)drComision["id_especialidad"];
+                    co.IdComision = (int)drComision["id_comision"];
+                    co.Descp = (string)drComision["desc_comision"];
+                    co.Anio = (int)drComision["anio_especialidad"];
+                    co.Id_plan = (int)drComision["id_plan"];
                 }
 
                 drComision.Close();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar el plan ingresado", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar la comision ingresada", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -80,13 +81,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete from planes where id_plan = @id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete from comisiones where id_comision = @id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar plan", Ex);
+                Exception ExcepcionManejada = new Exception("Error al eliminar comision", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -95,22 +96,24 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Planes pl)
+        protected void Insert(Comision co)
         {
             try
             {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand(
-                    "insert into planes (desc_plan, id_especialidad)" +
-                    "values (@desc_plan, @id_especialidad)" +
+                    "insert into comisiones (desc_comision, anio_especialidad,id_plan)" +
+                    "values (@desc_comision, @id_especialidad,@id_plan)" +
                     "select @@identity", sqlConn);
-                cmdInsert.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = pl.IdEspecialidad;
-                cmdInsert.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = pl.DescPlan;
-                pl.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
+                cmdInsert.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = co.Descp;
+                cmdInsert.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = co.Anio;
+                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = co.Id_plan;
+
+                co.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al ingresar usuario", Ex);
+                Exception ExcepcionManejada = new Exception("Error al ingresar comision", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -119,21 +122,21 @@ namespace Data.Database
             }
         }
 
-        protected void Update(Planes pl)
+        protected void Update(Comision co)
         {
             try
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand(
-                    "update planes set desc_plan = @descPlan, id_especialidad = @idEspecialidad where id_plan = @id", sqlConn);
-                cmdUpdate.Parameters.Add("@descPlan", SqlDbType.VarChar, 50).Value = pl.DescPlan;
-                cmdUpdate.Parameters.Add("@idEspecialidad", SqlDbType.Int).Value = pl.IdEspecialidad;
-                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = pl.Id;
+                    "update comisiones set desc_comision = @desc_comision, anio_especialidad = @anio_especialidad, id_plan = @id_plan where id_comision = @id", sqlConn);
+                cmdUpdate.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = co.Descp;
+                cmdUpdate.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = co.Anio;
+                cmdUpdate.Parameters.Add("@id_plan", SqlDbType.Int).Value = co.Id_plan;
                 cmdUpdate.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al modificar datos del plan", Ex);
+                Exception ExcepcionManejada = new Exception("Error al modificar datos de la comision", Ex);
                 throw ExcepcionManejada;
             }
             finally
