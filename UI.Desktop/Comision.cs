@@ -73,5 +73,17 @@ namespace UI.Desktop
             espd.ShowDialog();
             this.Listar();
         }
+
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbNuevo_Click_1(object sender, EventArgs e)
+        {
+            ComisionDesktop cd = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            cd.ShowDialog();
+            this.Listar();
+        }
     }
 }

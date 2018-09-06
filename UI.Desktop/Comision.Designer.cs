@@ -29,24 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comision));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tlComisiones = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComisiones = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsComisiones = new System.Windows.Forms.ToolStrip();
-            this.businessLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comisionLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comisionLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.tsComisiones = new System.Windows.Forms.ToolStrip();
+            this.businessLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsComision = new System.Windows.Forms.ToolStrip();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tlComisiones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessLogicBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionLogicBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessLogicBindingSource)).BeginInit();
+            this.tsComision.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -63,6 +70,11 @@
             this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsComision);
+            this.toolStripContainer1.TopToolStripPanel.Click += new System.EventHandler(this.toolStripContainer1_TopToolStripPanel_Click);
             // 
             // tlComisiones
             // 
@@ -98,6 +110,30 @@
             this.dgvComisiones.Size = new System.Drawing.Size(794, 390);
             this.dgvComisiones.TabIndex = 0;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // desp
+            // 
+            this.desp.HeaderText = "Descripcion";
+            this.desp.Name = "desp";
+            // 
+            // anio
+            // 
+            this.anio.HeaderText = "Año Especialidad";
+            this.anio.Name = "anio";
+            // 
+            // Id_plan
+            // 
+            this.Id_plan.HeaderText = "Id Plan";
+            this.Id_plan.Name = "Id_plan";
+            // 
+            // comisionLogicBindingSource
+            // 
+            this.comisionLogicBindingSource.DataSource = typeof(Negocio.ComisionLogic);
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(722, 399);
@@ -130,29 +166,46 @@
             // 
             this.businessLogicBindingSource.DataSource = typeof(Negocio.BusinessLogic);
             // 
-            // comisionLogicBindingSource
+            // tsComision
             // 
-            this.comisionLogicBindingSource.DataSource = typeof(Negocio.ComisionLogic);
+            this.tsComision.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsComision.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsbEliminar});
+            this.tsComision.Location = new System.Drawing.Point(7, 0);
+            this.tsComision.Name = "tsComision";
+            this.tsComision.Size = new System.Drawing.Size(112, 25);
+            this.tsComision.TabIndex = 1;
             // 
-            // Id
+            // tsbNuevo
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
+            this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuevo.Name = "tsbNuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
+            this.tsbNuevo.Text = "toolStripButton1";
+            this.tsbNuevo.ToolTipText = "Nuevo";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click_1);
             // 
-            // desp
+            // tsbEditar
             // 
-            this.desp.HeaderText = "Descripcion";
-            this.desp.Name = "desp";
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Text = "Editar";
             // 
-            // anio
+            // tsbEliminar
             // 
-            this.anio.HeaderText = "Año Especialidad";
-            this.anio.Name = "anio";
-            // 
-            // Id_plan
-            // 
-            this.Id_plan.HeaderText = "Id Plan";
-            this.Id_plan.Name = "Id_plan";
+            this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEliminar.Name = "tsbEliminar";
+            this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEliminar.Text = "Eliminar";
             // 
             // Comision
             // 
@@ -164,12 +217,16 @@
             this.Text = "Comision";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.tlComisiones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessLogicBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comisionLogicBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessLogicBindingSource)).EndInit();
+            this.tsComision.ResumeLayout(false);
+            this.tsComision.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +245,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_plan;
         private System.Windows.Forms.BindingSource comisionLogicBindingSource;
         private System.Windows.Forms.BindingSource businessLogicBindingSource;
+        private System.Windows.Forms.ToolStrip tsComision;
+        private System.Windows.Forms.ToolStripButton tsbNuevo;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbEliminar;
     }
 }

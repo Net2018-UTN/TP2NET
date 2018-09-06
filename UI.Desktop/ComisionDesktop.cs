@@ -19,141 +19,117 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void ComisionDesktop_Load(object sender, EventArgs e)
+        public ComisionDesktop(ModoForm modo) : this()
         {
-            PlanesLogic pl = new PlanesLogic();
-            cmbPlan.DataSource = pl.GetAll();
-            cmbPlan.DisplayMember = "Descripcion";
-            cmbPlan.ValueMember = "ID";
+            this.Modo = modo;
         }
-        public enum ModoForm
+
+        public ComisionDesktop(int id, ModoForm modo) : this()
         {
-            Alta, Baja, Modificación, Consulta
+            this.Modo = modo;
+            ComisionLogic co = new ComisionLogic();
+            comisionActual = co.GetOne(id);
+            this.MapearDeDatos();
         }
-        public ModoForm Modo { get; set; }
-        public virtual void MapearDeDatos()
+
+        private void PlanesDesktop_Load(object sender, EventArgs e)
         {
-            this.txtID.Text = this.ComisionActual.ID.ToString();
-            this.txtDescripcion.Text = this.ComisionActual.Descripcion;
-            this.txtAño.Text = this.ComisionActual.AñoEspecialidad.ToString();
-            this.cmbPlan.SelectedValue = this.ComisionActual.IdPlan;
-            switch (Modo)
+
+        }
+
+        private Entidades.Comision comisionActual;
+
+        public Entidades.Comision ComisionActual { get => comisionActual; set => comisionActual = value; }
+
+        public override void MapearDeDatos()
+        {
+            this.txtID.Text = this.comisionActual.Id.ToString();
+            this.txtDescripcion.Text = this.comisionActual.Descp;
+            this.txtAño.Text = this.comisionActual.Anio.ToString();
+            
+
+
+            if (Modo == ModoForm.Baja)
             {
-                case ModoForm.Alta:
-                case ModoForm.Modificación:
-                    {
-                        this.btnAceptar.Text = "Guardar";
-                        break;
-                    }
-                case ModoForm.Baja:
-                    {
-                        this.btnAceptar.Text = "Eliminar";
-                        txtAño.Enabled = false;
-                        txtDescripcion.Enabled = false;
-                        cmbPlan.Enabled = false;
-                        break;
-                    }
-                case ModoForm.Consulta:
-                    {
-                        this.btnAceptar.Text = "Aceptar";
-                        break;
-                    }
+                this.btnAceptar.Text = "Eliminar";
+            }
+            else if (Modo == ModoForm.Consulta)
+            {
+                this.btnAceptar.Text = "Aceptar";
+            }
+            else
+            {
+                this.btnAceptar.Text = "Guardar";
             }
         }
-        public virtual void MapearADatos()
+
+        public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)
             {
-                Business.Entities.Comision c = new Comision();
-                ComisionActual = c;
-                this.ComisionActual.State = BusinessEntity.States.New;
+                Entidades.Comision co = new Entidades.Comision();
+                comisionActual = co;
             }
-            if (Modo == ModoForm.Modificación)
+
+           // comisionActual.IdEspecialidad = int.Parse(this.cbEspecialidad.Text);
+            comisionActual.Descp = this.txtDescripcion.Text;
+
+            if (Modo == ModoForm.Alta)
             {
-                this.ComisionActual.ID = int.Parse(this.txtID.Text);
-                this.ComisionActual.State = BusinessEntity.States.Modified;
+                this.comisionActual.State = BusinessEntity.States.New;
+
             }
-            this.ComisionActual.Descripcion = this.txtDescripcion.Text;
-            this.ComisionActual.IdPlan = (int)this.cmbPlan.SelectedValue;
-            this.ComisionActual.AñoEspecialidad = int.Parse(this.txtAño.Text);
-        }
-        public virtual void GuardarCambios()
-        {
-            Business.Logic.ComisionLogic cl = new ComisionLogic();
-            switch (btnAceptar.Text)
+            else if (Modo == ModoForm.Baja)
             {
-                case "Aceptar":
-                case "Guardar":
-                    {
-                        MapearADatos();
-                        cl.Save(ComisionActual);
-                        break;
-                    }
-                case "Eliminar":
-                    {
-                        cl.Delete(ComisionActual.ID);
-                        break;
-                    }
+                this.comisionActual.State = BusinessEntity.States.Deleted;
             }
-        }
-        public virtual bool Validar()
-        {
-            if (String.IsNullOrWhiteSpace(txtDescripcion.Text))
+            else if (Modo == ModoForm.Consulta)
             {
-                Notificar("Campo vacío", "La descripción no puede estar vacía", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            else if (Util.Validacion.ValidarNum(txtAño.Text))
-            {
-                Notificar("Año Incorrecto", "El año debe ser un número entero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
+                this.comisionActual.State = BusinessEntity.States.Unmodified;
+
             }
             else
-                return true;
+            {
+                this.comisionActual.State = BusinessEntity.States.Modified;
+
+            }
+
+
         }
-        public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+        public override void GuardarCambios()
         {
-            MessageBox.Show(mensaje, titulo, botones, icono);
+            this.MapearADatos();
+            new ComisionLogic().Save(comisionActual);
         }
-        public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+
+        public override bool Validar()
         {
-            this.Notificar(this.Text, mensaje, botones, icono);
-        }
-        public Business.Entities.Comision ComisionActual { get; set; }
-        public ComisionDesktop(ModoForm modo)
-            : this()
-        {
-            Modo = ModoForm.Alta;
-        }
-        public ComisionDesktop(int ID, ModoForm modo)
-            : this()
-        {
-            Modo = modo;
-            Business.Logic.ComisionLogic cl = new ComisionLogic();
-            ComisionActual = cl.GetOne(ID);
-            MapearDeDatos();
+            if (this.txtDescripcion.Text == "")
+            {
+                this.Notificar("Error", "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (this.btnAceptar.Text == "Eliminar")
+            if (this.Validar())
             {
-                GuardarCambios();
-                Close();
+                this.GuardarCambios();
+                this.Close();
             }
-            else
-            {
-                if (Validar())
-                {
-                    GuardarCambios();
-                    Close();
-                }
-            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }
