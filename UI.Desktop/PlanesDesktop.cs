@@ -36,7 +36,7 @@ namespace UI.Desktop
 
         private void PlanesDesktop_Load(object sender, EventArgs e)
         {
-
+            this.LlenarCb();
         }
 
         private Entidades.Planes planActual;
@@ -47,15 +47,10 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-            EspecialidadLogic el = new EspecialidadLogic();
             this.txtId.Text = this.planActual.Id.ToString();
             this.txtDescripcion.Text = this.planActual.DescPlan;
 
             this.cbEspecialidad.Text = this.espActual.Desc_especialidad;
-            foreach (Entidades.Especialidad esp in el.GetAll())
-            {
-                this.cbEspecialidad.Items.Add(esp.Desc_especialidad);
-            }
 
 
             if (Modo == ModoForm.Baja)
@@ -137,6 +132,15 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void LlenarCb()
+        {
+            EspecialidadLogic el = new EspecialidadLogic();
+            foreach (Entidades.Especialidad esp in el.GetAll())
+            {
+                this.cbEspecialidad.Items.Add(esp.Desc_especialidad);
+            }
         }
     }
 }
