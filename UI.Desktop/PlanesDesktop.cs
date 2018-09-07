@@ -28,7 +28,9 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             PlanesLogic pl = new PlanesLogic();
+            EspecialidadLogic el = new EspecialidadLogic();
             planActual = pl.GetOne(id);
+            espActual = el.GetOne(planActual.IdEspecialidad);
             this.MapearDeDatos();
         }
 
@@ -38,15 +40,23 @@ namespace UI.Desktop
         }
 
         private Entidades.Planes planActual;
+        private Entidades.Especialidad espActual;
 
         public Entidades.Planes PlanActual { get => planActual; set => planActual = value; }
+        public Entidades.Especialidad EspActual { get => espActual; set => espActual = value; }
 
         public override void MapearDeDatos()
         {
+            EspecialidadLogic el = new EspecialidadLogic();
             this.txtId.Text = this.planActual.Id.ToString();
             this.txtDescripcion.Text = this.planActual.DescPlan;
-            this.cbEspecialidad.Text = this.planActual.IdEspecialidad.ToString();
-            
+
+            this.cbEspecialidad.Text = this.espActual.Desc_especialidad;
+            foreach (Entidades.Especialidad esp in el.GetAll())
+            {
+                this.cbEspecialidad.Items.Add(esp.Desc_especialidad);
+            }
+
 
             if (Modo == ModoForm.Baja)
             {
@@ -70,7 +80,10 @@ namespace UI.Desktop
                 planActual = pl;
             }
 
-            planActual.IdEspecialidad = int.Parse(this.cbEspecialidad.Text);
+            Entidades.Especialidad nuevaEsp = new Entidades.Especialidad();
+            EspecialidadLogic el = new EspecialidadLogic();
+
+            planActual.IdEspecialidad = el.GetId(this.cbEspecialidad.Text);
             planActual.DescPlan = this.txtDescripcion.Text;
 
             if (Modo == ModoForm.Alta)

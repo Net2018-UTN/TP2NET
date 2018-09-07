@@ -17,7 +17,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidad", sqlConn);
+                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidades", sqlConn);
                 SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
                 while (drEspecialidad.Read())
                 {
@@ -49,7 +49,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidad where id_especialidad = @id", SqlConn);
+                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidades where id_especialidad = @id", SqlConn);
                 cmdEspecialidad.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
                 if (drEspecialidad.Read())
@@ -77,7 +77,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete from especialidad where id_especialidad = @id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete from especialidades where id_especialidad = @id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmdDelete.ExecuteNonQuery();
             }
@@ -98,7 +98,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand(
-                    "insert into especialidad (desc_especialidad, id_especialidad)" +
+                    "insert into especialidades (desc_especialidad, id_especialidad)" +
                     "values (@desc_especialidad, @id_especialidad)" +
                     "select @@identity", sqlConn);
                 cmdInsert.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = esp.Id_especialidad;
@@ -122,7 +122,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand(
-                    "update especialidad set desc_especialidad = @descEspecialidad where id_especialidad = @id", sqlConn);
+                    "update especialidades set desc_especialidad = @descEspecialidad where id_especialidad = @id", sqlConn);
                 cmdUpdate.Parameters.Add("@descEspecialidad", SqlDbType.VarChar, 50).Value = esp.Desc_especialidad;
                 cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = esp.Id_especialidad;
                 cmdUpdate.ExecuteNonQuery();
@@ -154,6 +154,36 @@ namespace Data.Database
                 this.Update(esp);
             }
             esp.State = BusinessEntity.States.Unmodified;
+        }
+
+        public int GetId(string desc)
+        {
+            Especialidad esp = new Especialidad();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidades where desc_especialidad = @desc", SqlConn);
+                cmdEspecialidad.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = desc;
+                SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
+                if (drEspecialidad.Read())
+                {
+                    esp.Id_especialidad = (int)drEspecialidad["id_especialidad"];
+                    esp.Desc_especialidad = (string)drEspecialidad["desc_especialidad"];
+                }
+
+                drEspecialidad.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la especialidad ingresada", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return esp.Id_especialidad;
+
         }
     }
 }
