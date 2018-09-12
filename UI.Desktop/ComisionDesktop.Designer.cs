@@ -36,11 +36,11 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblAño = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
-            this.cmbPlan = new System.Windows.Forms.ComboBox();
-            this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtAño = new System.Windows.Forms.TextBox();
+            this.cbPlanes = new System.Windows.Forms.ComboBox();
+            this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +58,10 @@
             this.tableLayoutPanel1.Controls.Add(this.lblDescripcion, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblAño, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblPlan, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbPlan, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAño, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbPlanes, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -132,19 +132,6 @@
             this.lblPlan.TabIndex = 5;
             this.lblPlan.Text = "Plan";
             // 
-            // cmbPlan
-            // 
-            this.cmbPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbPlan.DataSource = this.planesBindingSource;
-            this.cmbPlan.DisplayMember = "desc_plan";
-            this.cmbPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPlan.FormattingEnabled = true;
-            this.cmbPlan.Location = new System.Drawing.Point(296, 49);
-            this.cmbPlan.Name = "cmbPlan";
-            this.cmbPlan.Size = new System.Drawing.Size(121, 21);
-            this.cmbPlan.TabIndex = 6;
-            this.cmbPlan.ValueMember = "id_plan";
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -170,6 +157,15 @@
             this.txtAño.Size = new System.Drawing.Size(121, 20);
             this.txtAño.TabIndex = 10;
             // 
+            // cbPlanes
+            // 
+            this.cbPlanes.FormattingEnabled = true;
+            this.cbPlanes.Location = new System.Drawing.Point(296, 43);
+            this.cbPlanes.Name = "cbPlanes";
+            this.cbPlanes.Size = new System.Drawing.Size(121, 21);
+            this.cbPlanes.TabIndex = 11;
+          
+            // 
             // ComisionDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +174,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ComisionDesktop";
             this.Text = "ComisionDesktop";
+            this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
@@ -194,10 +191,10 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblAño;
         private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.ComboBox cmbPlan;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.BindingSource planesBindingSource;
         private System.Windows.Forms.TextBox txtAño;
+        private System.Windows.Forms.ComboBox cbPlanes;
     }
 }

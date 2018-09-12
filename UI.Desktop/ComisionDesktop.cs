@@ -28,23 +28,26 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             ComisionLogic co = new ComisionLogic();
-            comisionActual = co.GetOne(id);
+            comisionActual = co.GetOne(id);           
+            PlanesLogic pl = new PlanesLogic();
+            planActual = pl.GetOne(comisionActual.Id_plan);
             this.MapearDeDatos();
         }
 
-        private void PlanesDesktop_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private Entidades.Comision comisionActual;
+        private Entidades.Planes planActual;
+
 
         public Entidades.Comision ComisionActual { get => comisionActual; set => comisionActual = value; }
+        public Entidades.Planes PlanActual { get => planActual; set => planActual = value; }
 
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.comisionActual.Id.ToString();
             this.txtDescripcion.Text = this.comisionActual.Descp;
+            this.cbPlanes.Text = this.planActual.DescPlan;
             this.txtAño.Text = this.comisionActual.Anio.ToString();
             
 
@@ -70,9 +73,13 @@ namespace UI.Desktop
                 Entidades.Comision co = new Entidades.Comision();
                 comisionActual = co;
             }
+            PlanesLogic pl = new PlanesLogic();
+            
 
-           // comisionActual.IdEspecialidad = int.Parse(this.cbEspecialidad.Text);
             comisionActual.Descp = this.txtDescripcion.Text;
+            comisionActual.Anio = int.Parse(this.txtAño.Text);
+            
+            comisionActual.Id_plan = pl.GetId(this.cbPlanes.Text);
 
             if (Modo == ModoForm.Alta)
             {
@@ -130,6 +137,21 @@ namespace UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+       
+
+        private void ComisionDesktop_Load(object sender, EventArgs e)
+        {
+            this.LlenarCb();
+        }
+        public void LlenarCb()
+        {
+            PlanesLogic pl = new PlanesLogic();
+            foreach(Entidades.Planes p in pl.GetAll())
+            {
+                this.cbPlanes.Items.Add(p.DescPlan);
+            }
         }
     }
 }

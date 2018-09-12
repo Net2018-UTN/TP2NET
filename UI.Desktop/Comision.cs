@@ -25,10 +25,7 @@ namespace UI.Desktop
 
         }
 
-        private void Especialidad_Load(object sender, EventArgs e)
-        {
-            this.Listar();
-        }
+       
 
         public void Listar()
         {
@@ -53,22 +50,22 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            ComisionDesktop espd = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
-            espd.ShowDialog();
+            ComisionDesktop cod = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            cod.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             int ID = ((Entidades.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
-            ComisionDesktop espd = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            espd.ShowDialog();
+            ComisionDesktop cod = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            cod.ShowDialog();
             this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int ID = ((Entidades.Especialidad)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+            int ID = ((Entidades.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
             ComisionDesktop espd = new ComisionDesktop(ID, ApplicationForm.ModoForm.Baja);
             espd.ShowDialog();
             this.Listar();
@@ -82,6 +79,42 @@ namespace UI.Desktop
         private void tsbNuevo_Click_1(object sender, EventArgs e)
         {
             ComisionDesktop cd = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            cd.ShowDialog();
+            this.Listar();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvComisiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Comision_Load_1(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void tsbEditar_Click_1(object sender, EventArgs e)
+        {
+            int ID = ((Entidades.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+            ComisionDesktop cd = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            cd.ShowDialog();
+            this.Listar();
+        }
+
+        private void tsbEliminar_Click_1(object sender, EventArgs e)
+        {
+            int ID = ((Entidades.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+            ComisionDesktop cd = new ComisionDesktop(ID, ApplicationForm.ModoForm.Baja);
             cd.ShowDialog();
             this.Listar();
         }

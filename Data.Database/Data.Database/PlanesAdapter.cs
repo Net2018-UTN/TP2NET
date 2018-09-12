@@ -44,6 +44,37 @@ namespace Data.Database
 
         }
 
+        public int GetId(string descp)
+        {
+            Planes p = new Planes();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlanes = new SqlCommand("select * from planes where desc_plan = @desc", SqlConn);
+                cmdPlanes.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = descp;
+                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+                if (drPlanes.Read())
+                {
+                    p.Id = (int)drPlanes["id_plan"];
+                    p.DescPlan = (string)drPlanes["desc_plan"];
+                }
+
+                drPlanes.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el plan ingresado", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return p.Id;
+
+        
+    }
+
         public Planes GetOne(int id)
         {
             Planes pl = new Planes();

@@ -51,5 +51,16 @@ namespace Negocio
             }
         }
 
+        public int GetId(string Descp)
+        {
+            try
+            {
+                return planesData.GetId(Descp);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
     }
 }
