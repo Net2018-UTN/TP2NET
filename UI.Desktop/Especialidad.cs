@@ -73,12 +73,5 @@ namespace UI.Desktop
             espd.ShowDialog();
             this.Listar();
         }
-
-        private void tsbNuevo_Click_1(object sender, EventArgs e)
-        {
-            EspecialidadDesktop esd = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
-            esd.ShowDialog();
-            this.Listar();
-        }
     }
 }

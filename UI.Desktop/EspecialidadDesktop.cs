@@ -43,7 +43,7 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtDesc.Text = this.espActual.Desc_especialidad;
-            this.txtID.Text = this.espActual.Id_especialidad.ToString();
+            this.txtID.Text = this.espActual.Id.ToString();
 
 
             if (Modo == ModoForm.Baja)
@@ -68,7 +68,6 @@ namespace UI.Desktop
                 espActual = esp;
             }
 
-            espActual.Id_especialidad = int.Parse(this.txtID.Text);
             espActual.Desc_especialidad = this.txtDesc.Text;
 
             if (Modo == ModoForm.Alta)
@@ -115,6 +114,11 @@ namespace UI.Desktop
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

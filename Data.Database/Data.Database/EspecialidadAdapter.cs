@@ -22,7 +22,7 @@ namespace Data.Database
                 while (drEspecialidad.Read())
                 {
                     Especialidad esp = new Especialidad();
-                    esp.Id_especialidad = (int)drEspecialidad["id_especialidad"];
+                    esp.Id = (int)drEspecialidad["id_especialidad"];
                     esp.Desc_especialidad = (string)drEspecialidad["desc_especialidad"];
 
                     especialidades.Add(esp);
@@ -54,7 +54,7 @@ namespace Data.Database
                 SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
                 if (drEspecialidad.Read())
                 {
-                    esp.Id_especialidad = (int)drEspecialidad["id_especialidad"];
+                    esp.Id = (int)drEspecialidad["id_especialidad"];
                     esp.Desc_especialidad = (string)drEspecialidad["desc_especialidad"];
                 }
 
@@ -98,10 +98,9 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand(
-                    "insert into especialidades (desc_especialidad, id_especialidad)" +
-                    "values (@desc_especialidad, @id_especialidad)" +
+                    "insert into especialidades (desc_especialidad)" +
+                    "values (@desc_especialidad)" +
                     "select @@identity", sqlConn);
-                cmdInsert.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = esp.Id_especialidad;
                 cmdInsert.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = esp.Desc_especialidad;
                 esp.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }
@@ -124,7 +123,7 @@ namespace Data.Database
                 SqlCommand cmdUpdate = new SqlCommand(
                     "update especialidades set desc_especialidad = @descEspecialidad where id_especialidad = @id", sqlConn);
                 cmdUpdate.Parameters.Add("@descEspecialidad", SqlDbType.VarChar, 50).Value = esp.Desc_especialidad;
-                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = esp.Id_especialidad;
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = esp.Id;
                 cmdUpdate.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -167,7 +166,7 @@ namespace Data.Database
                 SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
                 if (drEspecialidad.Read())
                 {
-                    esp.Id_especialidad = (int)drEspecialidad["id_especialidad"];
+                    esp.Id = (int)drEspecialidad["id_especialidad"];
                     esp.Desc_especialidad = (string)drEspecialidad["desc_especialidad"];
                 }
 
@@ -182,7 +181,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            return esp.Id_especialidad;
+            return esp.Id;
 
         }
     }
