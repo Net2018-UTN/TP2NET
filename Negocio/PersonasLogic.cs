@@ -8,7 +8,7 @@ using Data.Database;
 
 namespace Negocio
 {
-    class PersonasLogic : BusinessLogic
+    public class PersonasLogic : BusinessLogic
     {
         PersonaAdapter data = new PersonaAdapter();
         public List<Persona> GetAll()
