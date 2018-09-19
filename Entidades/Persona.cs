@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Persona : BusinessEntity;
+    public class Persona : BusinessEntity
     {
         private String nombre;
         private String apellido;
