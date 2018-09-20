@@ -20,11 +20,6 @@ namespace UI.Desktop
             this.dgvPlanes.AutoGenerateColumns = false;
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Planes_Load(object sender, EventArgs e)
         {
             this.Listar();

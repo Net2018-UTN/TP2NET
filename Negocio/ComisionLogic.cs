@@ -51,6 +51,19 @@ namespace Negocio
             }
         }
 
+        public int GetId(string desc)
+        {
+            try
+            {
+                return comisionData.GetId(desc);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
+
     }
 }
 

@@ -75,7 +75,6 @@ namespace UI.Desktop
                 planActual = pl;
             }
 
-            Entidades.Especialidad nuevaEsp = new Entidades.Especialidad();
             EspecialidadLogic el = new EspecialidadLogic();
 
             planActual.IdEspecialidad = el.GetId(this.cbEspecialidad.Text);

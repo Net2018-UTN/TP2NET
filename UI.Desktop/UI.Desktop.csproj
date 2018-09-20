@@ -81,6 +81,18 @@
     <Compile Include="ComisionDesktop.Designer.cs">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Curso.Designer.cs">
+      <DependentUpon>Curso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursoDesktop.Designer.cs">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     <EmbeddedResource Include="ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Curso.resx">
+      <DependentUpon>Curso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursoDesktop.resx">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Especialidad.resx">
       <DependentUpon>Especialidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +188,7 @@
     <None Include="Properties\DataSources\Entidades.Persona.datasource" />
     <None Include="Properties\DataSources\Negocio.BusinessLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.ComisionLogic.datasource" />
+    <None Include="Properties\DataSources\Negocio.CursoLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.EspecialidadLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.PlanesLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.UsuarioLogic.datasource" />
