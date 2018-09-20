@@ -9,7 +9,7 @@ using Entidades;
 
 namespace Data.Database
 {
-    class CursoAdapter : Adapter
+    public class CursoAdapter : Adapter
     {
         public List<Curso> GetAll()
         {
@@ -83,7 +83,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete from cursos where id = @id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete from cursos where id_comision = @id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmdDelete.ExecuteNonQuery();
             }
@@ -109,7 +109,7 @@ namespace Data.Database
                     "select @@identity", sqlConn);
                 cmdInsert.Parameters.Add("@cupo", SqlDbType.Int).Value = cur.Cupo;
                 cmdInsert.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = cur.AnioCalendario;
-                cmdInsert.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.AnioCalendario;
+                cmdInsert.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.IdMateria;
                 cmdInsert.Parameters.Add("@id_comision", SqlDbType.Int).Value = cur.IdComision;
                 cur.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
 

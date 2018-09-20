@@ -13,7 +13,6 @@ namespace Entidades
         int anioCalendario;
         int cupo;
 
-        public int IdCurso { get => idCurso; set => idCurso = value; }
         public int IdMateria { get => idMateria; set => idMateria = value; }
         public int IdComision { get => idComision; set => idComision = value; }
         public int AnioCalendario { get => anioCalendario; set => anioCalendario = value; }

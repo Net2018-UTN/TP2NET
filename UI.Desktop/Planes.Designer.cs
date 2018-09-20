@@ -73,7 +73,6 @@ namespace UI.Desktop
             // 
             this.tcPLanes.ContentPanel.Controls.Add(this.tlPLanes);
             this.tcPLanes.ContentPanel.Size = new System.Drawing.Size(528, 282);
-            this.tcPLanes.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.tcPLanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPLanes.Location = new System.Drawing.Point(0, 0);
             this.tcPLanes.Name = "tcPLanes";
