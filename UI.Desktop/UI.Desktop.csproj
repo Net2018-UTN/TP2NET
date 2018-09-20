@@ -105,6 +105,12 @@
     <Compile Include="EspecialidadDesktop.Designer.cs">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persona.Designer.cs">
+      <DependentUpon>Persona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Planes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Persona.resx">
+      <DependentUpon>Persona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,7 @@
     </Compile>
     <None Include="Properties\DataSources\Data.Database.Adapter.datasource" />
     <None Include="Properties\DataSources\Data.Database.UsuarioAdapter.datasource" />
+    <None Include="Properties\DataSources\Entidades.Persona.datasource" />
     <None Include="Properties\DataSources\Negocio.BusinessLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.ComisionLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.CursoLogic.datasource" />
