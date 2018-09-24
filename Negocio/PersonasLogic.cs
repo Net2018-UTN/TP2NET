@@ -16,5 +16,28 @@ namespace Negocio
             List<Persona> pers = data.GetAll();
             return pers;
         }
+
+        public Persona GetOne(int id)
+        {
+            return data.GetOne(id);
+        }
+
+        public void Save(Persona p)
+        {
+            data.Save(p);
+        }
+        public void Delete(int id)
+        {
+            try
+            {
+                data.Delete(id);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+       
+        }
     }
-}
+

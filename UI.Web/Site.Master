@@ -7,8 +7,9 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
+    
 <body>
-    <form id="bodyForm" runat="server">
+        <form id="bodyForm" runat="server">
         <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
         </asp:Menu>
         <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />

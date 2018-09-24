@@ -125,7 +125,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Planes pl)
+        public void Insert(Planes pl)
         {
             try
             {
@@ -149,7 +149,7 @@ namespace Data.Database
             }
         }
 
-        protected void Update(Planes pl)
+        public void Update(Planes pl)
         {
             try
             {
