@@ -235,6 +235,7 @@
     <None Include="Properties\DataSources\Negocio.ComisionLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.CursoLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.EspecialidadLogic.datasource" />
+    <None Include="Properties\DataSources\Negocio.MateriaLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.PlanesLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.UsuarioLogic.datasource" />
     <None Include="Properties\Settings.settings">

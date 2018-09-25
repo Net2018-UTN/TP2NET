@@ -58,7 +58,17 @@ namespace Negocio
             }
         }
 
-
+        public int GetId(string desc)
+        {
+            try
+            {
+                return materiaData.GetId(desc);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
 
     }
 }

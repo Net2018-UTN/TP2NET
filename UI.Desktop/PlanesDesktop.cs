@@ -141,10 +141,5 @@ namespace UI.Desktop
                 this.cbEspecialidad.Items.Add(esp.Desc_especialidad);
             }
         }
-
-        private void cbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
