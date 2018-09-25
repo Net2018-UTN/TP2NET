@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcMateria = new System.Windows.Forms.ToolStripContainer();
             this.tlMateria = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMateria = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tsMateria = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiaLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tcMateria.ContentPanel.SuspendLayout();
             this.tcMateria.TopToolStripPanel.SuspendLayout();
             this.tcMateria.SuspendLayout();
             this.tlMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateria)).BeginInit();
             this.tsMateria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaLogicBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMateria
@@ -89,6 +92,7 @@
             // 
             this.dgvMateria.AllowUserToAddRows = false;
             this.dgvMateria.AllowUserToDeleteRows = false;
+            this.dgvMateria.AutoGenerateColumns = false;
             this.dgvMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMateria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -97,6 +101,7 @@
             this.hsTotales,
             this.planId});
             this.tlMateria.SetColumnSpan(this.dgvMateria, 2);
+            this.dgvMateria.DataSource = this.materiaLogicBindingSource;
             this.dgvMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMateria.Location = new System.Drawing.Point(3, 3);
             this.dgvMateria.Name = "dgvMateria";
@@ -104,6 +109,41 @@
             this.dgvMateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMateria.Size = new System.Drawing.Size(663, 258);
             this.dgvMateria.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // descMateria
+            // 
+            this.descMateria.DataPropertyName = "descMateria";
+            this.descMateria.HeaderText = "Descripcion";
+            this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
+            // 
+            // hsSemanales
+            // 
+            this.hsSemanales.DataPropertyName = "hsSemanales";
+            this.hsSemanales.HeaderText = "Horas Semanales";
+            this.hsSemanales.Name = "hsSemanales";
+            this.hsSemanales.ReadOnly = true;
+            // 
+            // hsTotales
+            // 
+            this.hsTotales.DataPropertyName = "hsTotales";
+            this.hsTotales.HeaderText = "Horas totales";
+            this.hsTotales.Name = "hsTotales";
+            this.hsTotales.ReadOnly = true;
+            // 
+            // planId
+            // 
+            this.planId.DataPropertyName = "idPlan";
+            this.planId.HeaderText = "Plan";
+            this.planId.Name = "planId";
+            this.planId.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -168,40 +208,9 @@
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // id
+            // materiaLogicBindingSource
             // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // descMateria
-            // 
-            this.descMateria.DataPropertyName = "descMateria";
-            this.descMateria.HeaderText = "Descripcion";
-            this.descMateria.Name = "descMateria";
-            this.descMateria.ReadOnly = true;
-            // 
-            // hsSemanales
-            // 
-            this.hsSemanales.DataPropertyName = "hsSemanales";
-            this.hsSemanales.HeaderText = "Horas Semanales";
-            this.hsSemanales.Name = "hsSemanales";
-            this.hsSemanales.ReadOnly = true;
-            // 
-            // hsTotales
-            // 
-            this.hsTotales.DataPropertyName = "hsTotales";
-            this.hsTotales.HeaderText = "Horas totales";
-            this.hsTotales.Name = "hsTotales";
-            this.hsTotales.ReadOnly = true;
-            // 
-            // planId
-            // 
-            this.planId.DataPropertyName = "idPlan";
-            this.planId.HeaderText = "Plan";
-            this.planId.Name = "planId";
-            this.planId.ReadOnly = true;
+            this.materiaLogicBindingSource.DataSource = typeof(Negocio.MateriaLogic);
             // 
             // Materia
             // 
@@ -221,6 +230,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateria)).EndInit();
             this.tsMateria.ResumeLayout(false);
             this.tsMateria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaLogicBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hsSemanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn hsTotales;
         private System.Windows.Forms.DataGridViewTextBoxColumn planId;
+        private System.Windows.Forms.BindingSource materiaLogicBindingSource;
     }
 }

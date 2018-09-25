@@ -29,19 +29,20 @@ namespace UI.Desktop
             this.Modo = modo;
             CursoLogic cl = new CursoLogic();
             ComisionLogic coml = new ComisionLogic();
-            //MateriaLogic ml = new MateriaLogic();
+            MateriaLogic ml = new MateriaLogic();
             CursoActual = cl.GetOne(id);
             ComisionActual = coml.GetOne(cursoActual.IdComision);
-            //materiaActual = ml.GetOne(cursoActual.idMateria);
+            MateriaActual = ml.GetOne(cursoActual.IdMateria);
             this.MapearDeDatos();
         }
 
         private Entidades.Curso cursoActual;
         private Entidades.Comision comisionActual;
-        //private Entidades.Materia materiaActual; *Generar constructor*
+        private Entidades.Materia materiaActual;
 
         public Entidades.Curso CursoActual { get => cursoActual; set => cursoActual = value; }
         public Entidades.Comision ComisionActual { get => comisionActual; set => comisionActual = value; }
+        public Entidades.Materia MateriaActual { get => materiaActual; set => materiaActual = value; }
 
         public override void MapearDeDatos()
         {
@@ -49,7 +50,7 @@ namespace UI.Desktop
             this.txtCupo.Text = this.cursoActual.Cupo.ToString();
             this.txtAnioCalendario.Text = this.cursoActual.AnioCalendario.ToString();
 
-            this.cbMateria.Text = this.cursoActual.IdMateria.ToString();
+            this.cbMateria.Text = this.materiaActual.DescMateria;
             this.cbComision.Text = this.comisionActual.Descp;
 
 
@@ -76,15 +77,13 @@ namespace UI.Desktop
             }
 
             ComisionLogic coml = new ComisionLogic();
-            //MateriaLogic ml = new MateriaLogic();
+            MateriaLogic ml = new MateriaLogic();
 
-            cursoActual.IdComision = int.Parse(this.cbComision.Text);
-            cursoActual.IdMateria = int.Parse(this.cbMateria.Text);
             cursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
             cursoActual.Cupo = int.Parse(this.txtCupo.Text);
 
             cursoActual.IdComision = coml.GetId(this.cbComision.Text);
-            //cursoActual.IdMateria = ml.GetId(this.cbMateria.Text);
+            cursoActual.IdMateria = ml.GetId(this.cbMateria.Text);
 
             if (Modo == ModoForm.Alta)
             {
@@ -147,7 +146,11 @@ namespace UI.Desktop
                 this.cbComision.Items.Add(com.Descp);
             }
 
-            //Hacer lo mismo pero para materias, cuando tenga hecha la entidad
+            MateriaLogic ml = new MateriaLogic();
+            foreach (Entidades.Materia m in ml.GetAll())
+            {
+                this.cbMateria.Items.Add(m.DescMateria);
+            }
         }
 
         private void CursoDesktop_Load(object sender, EventArgs e)

@@ -167,5 +167,34 @@ namespace Data.Database
             }
             mat.State = BusinessEntity.States.Unmodified;
         }
+
+        public int GetId(string desc)
+        {
+            Materia mat = new Materia();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdMateria = new SqlCommand("select id_materia from materias where desc_materia = @desc", SqlConn);
+                cmdMateria.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = desc;
+                SqlDataReader drMateria = cmdMateria.ExecuteReader();
+                if (drMateria.Read())
+                {
+                    mat.Id = (int)drMateria["id_materia"];
+                }
+
+                drMateria.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la materia ingresada", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return mat.Id;
+
+        }
     }
 }
