@@ -41,6 +41,7 @@
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcMateria.ContentPanel.SuspendLayout();
             this.tcMateria.TopToolStripPanel.SuspendLayout();
             this.tcMateria.SuspendLayout();
@@ -105,7 +106,8 @@
             this.id,
             this.descMateria,
             this.hsSemanales,
-            this.hsTotales});
+            this.hsTotales,
+            this.plan});
             this.tlMateria.SetColumnSpan(this.dgvMateria, 2);
             this.dgvMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMateria.Location = new System.Drawing.Point(3, 3);
@@ -194,6 +196,13 @@
             this.hsTotales.Name = "hsTotales";
             this.hsTotales.ReadOnly = true;
             // 
+            // plan
+            // 
+            this.plan.DataPropertyName = "idPlan";
+            this.plan.HeaderText = "Plan";
+            this.plan.Name = "plan";
+            this.plan.ReadOnly = true;
+            // 
             // Materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn hsSemanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn hsTotales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plan;
     }
 }

@@ -131,8 +131,9 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand(
-                    "update materias set desc_materia = @descMateria, hs_semanales = @hsSemanales, hs_totales = @hsTotales, id_plan = @idPlan" +
+                    "update materias set desc_materia = @descMateria, hs_semanales = @hsSemanales, hs_totales = @hsTotales, id_plan = @idPlan " +
                     "where id_materia = @id", sqlConn);
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = mat.Id;
                 cmdUpdate.Parameters.Add("@descMateria", SqlDbType.VarChar).Value = mat.DescMateria;
                 cmdUpdate.Parameters.Add("@hsSemanales", SqlDbType.Int).Value = mat.HsSemanales;
                 cmdUpdate.Parameters.Add("@hsTotales", SqlDbType.Int).Value = mat.HsTotales;

@@ -142,7 +142,7 @@ namespace UI.Desktop
             }
         }
 
-        private void CursoDesktop_Load(object sender, EventArgs e)
+        private void MateriaDesktop_Load(object sender, EventArgs e)
         {
             this.LlenarCb();
         }
