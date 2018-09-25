@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tcMateria = new System.Windows.Forms.ToolStripContainer();
-            this.tsMateria = new System.Windows.Forms.ToolStrip();
             this.tlMateria = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMateria = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.tsMateria = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
@@ -41,13 +41,13 @@
             this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcMateria.ContentPanel.SuspendLayout();
             this.tcMateria.TopToolStripPanel.SuspendLayout();
             this.tcMateria.SuspendLayout();
-            this.tsMateria.SuspendLayout();
             this.tlMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateria)).BeginInit();
+            this.tsMateria.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMateria
@@ -67,18 +67,6 @@
             // tcMateria.TopToolStripPanel
             // 
             this.tcMateria.TopToolStripPanel.Controls.Add(this.tsMateria);
-            // 
-            // tsMateria
-            // 
-            this.tsMateria.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsMateria.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            this.tsbEditar,
-            this.tsbEliminar});
-            this.tsMateria.Location = new System.Drawing.Point(3, 0);
-            this.tsMateria.Name = "tsMateria";
-            this.tsMateria.Size = new System.Drawing.Size(81, 25);
-            this.tsMateria.TabIndex = 0;
             // 
             // tlMateria
             // 
@@ -107,7 +95,7 @@
             this.descMateria,
             this.hsSemanales,
             this.hsTotales,
-            this.plan});
+            this.planId});
             this.tlMateria.SetColumnSpan(this.dgvMateria, 2);
             this.dgvMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMateria.Location = new System.Drawing.Point(3, 3);
@@ -137,6 +125,18 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // tsMateria
+            // 
+            this.tsMateria.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMateria.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsbEliminar});
+            this.tsMateria.Location = new System.Drawing.Point(3, 0);
+            this.tsMateria.Name = "tsMateria";
+            this.tsMateria.Size = new System.Drawing.Size(81, 25);
+            this.tsMateria.TabIndex = 0;
             // 
             // tsbNuevo
             // 
@@ -196,12 +196,12 @@
             this.hsTotales.Name = "hsTotales";
             this.hsTotales.ReadOnly = true;
             // 
-            // plan
+            // planId
             // 
-            this.plan.DataPropertyName = "idPlan";
-            this.plan.HeaderText = "Plan";
-            this.plan.Name = "plan";
-            this.plan.ReadOnly = true;
+            this.planId.DataPropertyName = "idPlan";
+            this.planId.HeaderText = "Plan";
+            this.planId.Name = "planId";
+            this.planId.ReadOnly = true;
             // 
             // Materia
             // 
@@ -217,10 +217,10 @@
             this.tcMateria.TopToolStripPanel.PerformLayout();
             this.tcMateria.ResumeLayout(false);
             this.tcMateria.PerformLayout();
-            this.tsMateria.ResumeLayout(false);
-            this.tsMateria.PerformLayout();
             this.tlMateria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMateria)).EndInit();
+            this.tsMateria.ResumeLayout(false);
+            this.tsMateria.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -240,6 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn hsSemanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn hsTotales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
     }
 }
