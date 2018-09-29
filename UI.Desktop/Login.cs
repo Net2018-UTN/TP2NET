@@ -21,18 +21,6 @@ namespace UI.Desktop
 
         UsuarioLogic ul = new UsuarioLogic();
 
-        /*public UsuarioLogic Ul
-        {
-            get
-            {
-                if (Ul == null)
-                {
-                    ul = new UsuarioLogic();
-                }
-                return ul;
-            }
-        }*/
-
         Usuario usuario;
 
         private Usuario Usuario { get; set; }
@@ -57,33 +45,26 @@ namespace UI.Desktop
             try
             {
                 usuario = ul.GetUsuario(txtUsuario.Text);
-                if(usuario != null)
+                if(usuario.NombreUsuario != txtUsuario.Text)
                 {
-                    if(this.ValidarPass(usuario.Clave)){
-                        this.DialogResult = DialogResult.OK;
-                    }
+                    MessageBox.Show("El usuario es incorrecto", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-
+                else if (!this.ValidarPass(usuario.Clave))
+                {
+                    MessageBox.Show("La contraseña no es correcta", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
-
-            //A esto hay que adaptarlo para que funcione con la capa de negocio
-
-
-            /*if (this.txtUsuario.Text == Ul.get && this.txtPass.Text == "admin")
-            {
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
-       }
+        }
 
         private bool ValidarPass(string clave)
         {
@@ -91,7 +72,6 @@ namespace UI.Desktop
             {
                 return true;
             }
-
             return false;
         }
 
