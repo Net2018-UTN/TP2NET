@@ -57,6 +57,18 @@ namespace Negocio
             {
                 throw Ex;
             }
-        }       
+        }
+
+        public Usuario GetUsuario(string nombreUsuario)
+        {
+            try
+            {
+                return usuarioData.GetUsuario(nombreUsuario);
+            }
+            catch(Exception Ex)
+            {
+                throw Ex;
+            }
+        }
     }
 }

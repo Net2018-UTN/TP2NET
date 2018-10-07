@@ -40,7 +40,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtFechaNac = new System.Windows.Forms.TextBox();
             this.txtTipoPer = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbPlan = new System.Windows.Forms.ComboBox();
+            this.txtFechaNac = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,7 +72,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtApellido, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtFechaNac, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtTipoPer, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 3, 1);
@@ -81,6 +80,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbPlan, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtFechaNac, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -186,13 +186,6 @@
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 12;
             // 
-            // txtFechaNac
-            // 
-            this.txtFechaNac.Location = new System.Drawing.Point(118, 106);
-            this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaNac.TabIndex = 13;
-            // 
             // txtTipoPer
             // 
             this.txtTipoPer.Location = new System.Drawing.Point(118, 160);
@@ -254,6 +247,15 @@
             this.cbPlan.Size = new System.Drawing.Size(114, 21);
             this.cbPlan.TabIndex = 19;
             // 
+            // txtFechaNac
+            // 
+            this.txtFechaNac.Location = new System.Drawing.Point(118, 106);
+            this.txtFechaNac.Mask = "00/00/0000";
+            this.txtFechaNac.Name = "txtFechaNac";
+            this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
+            this.txtFechaNac.TabIndex = 20;
+            this.txtFechaNac.ValidatingType = typeof(System.DateTime);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(396, 235);
@@ -305,7 +307,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtFechaNac;
         private System.Windows.Forms.TextBox txtTipoPer;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -316,5 +317,6 @@
         private System.Windows.Forms.ComboBox cbPlan;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.MaskedTextBox txtFechaNac;
     }
 }
