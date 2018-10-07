@@ -31,7 +31,21 @@
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPersonas = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnMaterias = new System.Windows.Forms.Button();
+            this.btnComisiones = new System.Windows.Forms.Button();
+            this.btnPlanes = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnEspecialidades = new System.Windows.Forms.Button();
+            this.btnModulos = new System.Windows.Forms.Button();
+            this.btnModulosUsuarios = new System.Windows.Forms.Button();
+            this.btnAlumnosInscripciones = new System.Windows.Forms.Button();
+            this.btnDocentesCursos = new System.Windows.Forms.Button();
             this.mnuPrincipal.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuPrincipal
@@ -55,24 +69,177 @@
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(180, 22);
+            this.mnuSalir.Size = new System.Drawing.Size(96, 22);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDocentesCursos);
+            this.panel1.Controls.Add(this.btnAlumnosInscripciones);
+            this.panel1.Controls.Add(this.btnModulosUsuarios);
+            this.panel1.Controls.Add(this.btnModulos);
+            this.panel1.Controls.Add(this.btnEspecialidades);
+            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.btnPlanes);
+            this.panel1.Controls.Add(this.btnComisiones);
+            this.panel1.Controls.Add(this.btnMaterias);
+            this.panel1.Controls.Add(this.btnCursos);
+            this.panel1.Controls.Add(this.btnPersonas);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 426);
+            this.panel1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(289, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "¡Bienvenido al Sistema!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnPersonas
+            // 
+            this.btnPersonas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPersonas.Location = new System.Drawing.Point(317, 103);
+            this.btnPersonas.Name = "btnPersonas";
+            this.btnPersonas.Size = new System.Drawing.Size(144, 23);
+            this.btnPersonas.TabIndex = 1;
+            this.btnPersonas.Text = "Personas";
+            this.btnPersonas.UseVisualStyleBackColor = true;
+            this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
+            // 
+            // btnCursos
+            // 
+            this.btnCursos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCursos.Location = new System.Drawing.Point(317, 248);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(144, 23);
+            this.btnCursos.TabIndex = 2;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
+            // btnMaterias
+            // 
+            this.btnMaterias.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMaterias.Location = new System.Drawing.Point(317, 335);
+            this.btnMaterias.Name = "btnMaterias";
+            this.btnMaterias.Size = new System.Drawing.Size(144, 23);
+            this.btnMaterias.TabIndex = 3;
+            this.btnMaterias.Text = "Materias";
+            this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
+            // 
+            // btnComisiones
+            // 
+            this.btnComisiones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnComisiones.Location = new System.Drawing.Point(317, 306);
+            this.btnComisiones.Name = "btnComisiones";
+            this.btnComisiones.Size = new System.Drawing.Size(144, 23);
+            this.btnComisiones.TabIndex = 4;
+            this.btnComisiones.Text = "Comisiones";
+            this.btnComisiones.UseVisualStyleBackColor = true;
+            this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
+            // 
+            // btnPlanes
+            // 
+            this.btnPlanes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPlanes.Location = new System.Drawing.Point(317, 219);
+            this.btnPlanes.Name = "btnPlanes";
+            this.btnPlanes.Size = new System.Drawing.Size(144, 23);
+            this.btnPlanes.TabIndex = 5;
+            this.btnPlanes.Text = "Planes";
+            this.btnPlanes.UseVisualStyleBackColor = true;
+            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnUsuarios.Location = new System.Drawing.Point(317, 132);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(144, 23);
+            this.btnUsuarios.TabIndex = 6;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnEspecialidades
+            // 
+            this.btnEspecialidades.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEspecialidades.Location = new System.Drawing.Point(317, 277);
+            this.btnEspecialidades.Name = "btnEspecialidades";
+            this.btnEspecialidades.Size = new System.Drawing.Size(144, 23);
+            this.btnEspecialidades.TabIndex = 7;
+            this.btnEspecialidades.Text = "Especialidades";
+            this.btnEspecialidades.UseVisualStyleBackColor = true;
+            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
+            // 
+            // btnModulos
+            // 
+            this.btnModulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnModulos.Location = new System.Drawing.Point(317, 190);
+            this.btnModulos.Name = "btnModulos";
+            this.btnModulos.Size = new System.Drawing.Size(144, 23);
+            this.btnModulos.TabIndex = 8;
+            this.btnModulos.Text = "Modulos";
+            this.btnModulos.UseVisualStyleBackColor = true;
+            // 
+            // btnModulosUsuarios
+            // 
+            this.btnModulosUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnModulosUsuarios.Location = new System.Drawing.Point(317, 161);
+            this.btnModulosUsuarios.Name = "btnModulosUsuarios";
+            this.btnModulosUsuarios.Size = new System.Drawing.Size(144, 23);
+            this.btnModulosUsuarios.TabIndex = 9;
+            this.btnModulosUsuarios.Text = "Modulos Usuarios";
+            this.btnModulosUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // btnAlumnosInscripciones
+            // 
+            this.btnAlumnosInscripciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAlumnosInscripciones.Location = new System.Drawing.Point(317, 364);
+            this.btnAlumnosInscripciones.Name = "btnAlumnosInscripciones";
+            this.btnAlumnosInscripciones.Size = new System.Drawing.Size(144, 23);
+            this.btnAlumnosInscripciones.TabIndex = 10;
+            this.btnAlumnosInscripciones.Text = "Inscripciones de Alumnos";
+            this.btnAlumnosInscripciones.UseVisualStyleBackColor = true;
+            // 
+            // btnDocentesCursos
+            // 
+            this.btnDocentesCursos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDocentesCursos.Location = new System.Drawing.Point(317, 393);
+            this.btnDocentesCursos.Name = "btnDocentesCursos";
+            this.btnDocentesCursos.Size = new System.Drawing.Size(144, 23);
+            this.btnDocentesCursos.TabIndex = 11;
+            this.btnDocentesCursos.Text = "Docentes de Cursos";
+            this.btnDocentesCursos.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.mnuPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuPrincipal;
             this.Name = "Menu";
             this.Text = "Academia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.Shown += new System.EventHandler(this.Menu_Shown);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +250,18 @@
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnuArchivo;
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnMaterias;
+        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnPersonas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDocentesCursos;
+        private System.Windows.Forms.Button btnAlumnosInscripciones;
+        private System.Windows.Forms.Button btnModulosUsuarios;
+        private System.Windows.Forms.Button btnModulos;
+        private System.Windows.Forms.Button btnEspecialidades;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnPlanes;
+        private System.Windows.Forms.Button btnComisiones;
     }
 }

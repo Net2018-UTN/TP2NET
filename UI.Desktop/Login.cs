@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class formLogin : Form
+    public partial class Login : Form
     {
-        public formLogin()
+        public Login()
         {
             InitializeComponent();
         }
