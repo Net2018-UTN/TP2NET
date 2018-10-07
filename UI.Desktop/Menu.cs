@@ -17,6 +17,8 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
+
+
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -29,6 +31,7 @@ namespace UI.Desktop
             {
                 this.Dispose();
             }
+
             
 
         }

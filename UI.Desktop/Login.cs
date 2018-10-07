@@ -54,6 +54,10 @@ namespace UI.Desktop
                 {
                     MessageBox.Show("La contraseña no es correcta", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (!usuario.Habilitado)
+                {
+                    MessageBox.Show("El usuario no está habilitado", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
                 {
                     this.DialogResult = DialogResult.OK;
