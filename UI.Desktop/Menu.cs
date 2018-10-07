@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace UI.Desktop
 {
@@ -33,7 +34,6 @@ namespace UI.Desktop
                 this.Dispose();
             }
             this.Show();
-
             
 
         }

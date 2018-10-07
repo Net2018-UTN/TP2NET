@@ -21,9 +21,9 @@ namespace UI.Desktop
 
         UsuarioLogic ul = new UsuarioLogic();
 
-        Usuario usuario;
+        public Usuario usuario;
 
-        private Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         PersonasLogic pl;
         public PersonasLogic Pl
