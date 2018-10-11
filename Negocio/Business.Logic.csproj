@@ -46,6 +46,7 @@
     <Compile Include="CursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
+    <Compile Include="ModuloLogic.cs" />
     <Compile Include="PersonasLogic.cs" />
     <Compile Include="PlanesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
