@@ -11,7 +11,13 @@ namespace UI.web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["nombreUsuario"] == null)
+            {
+                Session["nombreUsuario"] = "";
+            }
+            lblUsu.Text = string.Format("nombreUsuario: '{0}'",
+            Session["nombreUsuario"].ToString());
         }
+
     }
-}
+}   
