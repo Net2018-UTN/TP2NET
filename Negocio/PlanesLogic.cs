@@ -31,7 +31,15 @@ namespace Negocio
 
         public Planes GetOne(int id)
         {
-            return planesData.GetOne(id);
+            try
+            {
+                return planesData.GetOne(id);
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
         }
 
         public void Save(Planes pl)

@@ -140,7 +140,7 @@ namespace Data.Database
             }
             catch(Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al ingresar usuario", Ex);
+                Exception ExcepcionManejada = new Exception("Error al ingresar el plan", Ex);
                 throw ExcepcionManejada;
             }
             finally
