@@ -97,11 +97,22 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            if(this.txtNombre.Text == "" || this.txtApellido.Text == "" || this.txtClave.Text == ""
+            string mensaje = "";
+
+            if(this.txtNombre.Text.Trim() == "" || this.txtApellido.Text == "" || this.txtClave.Text == ""
                 || this.txtConfirmarClave.Text == "" || this.txtEmail.Text == "" || this.txtUsuario.Text == ""
                 || this.txtClave.Text != this.txtConfirmarClave.Text)
             {
-                this.Notificar("Error", "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                mensaje += "Dato requerido";
+            }
+
+            if (this.txtEmail.Text == "") // !Util.Validaciones.EsMailValido(this.txtEmail.TextTrim()
+            {
+                mensaje += "Email invalido. Por favor valide el mismo";
+            }
+            if (String.IsNullOrWhiteSpace(mensaje))
+            {
+                this.Notificar("Error", mensaje, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 

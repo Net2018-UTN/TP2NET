@@ -8,25 +8,20 @@ using Entidades;
 
 namespace Negocio
 {
-    public class UsuarioLogic : BusinessLogic
+    public class MateriaLogic
     {
-        private UsuarioAdapter usuarioData;
+        private MateriaAdapter materiaData;
 
-        public UsuarioLogic()
+        public MateriaLogic()
         {
-            this.usuarioData = new UsuarioAdapter();
+            this.materiaData = new MateriaAdapter();
         }
 
-        public Usuario GetOne(int id)
-        {
-            return usuarioData.GetOne(id);
-        }
-
-        public List<Usuario> GetAll()
+        public List<Materia> GetAll()
         {
             try
             {
-                return usuarioData.GetAll();
+                return materiaData.GetAll();
             }
             catch (Exception Ex)
             {
@@ -34,24 +29,28 @@ namespace Negocio
             }
         }
 
-        public void Save(Usuario usu)
+        public Materia GetOne(int id)
         {
             try
             {
-                usuarioData.Save(usu);
+                return materiaData.GetOne(id);
             }
-            catch(Exception Ex)
+            catch (Exception Ex)
             {
                 throw Ex;
             }
-   
+        }
+
+        public void Save(Materia mat)
+        {
+            materiaData.Save(mat);
         }
 
         public void Delete(int id)
         {
             try
             {
-                usuarioData.Delete(id);
+                materiaData.Delete(id);
             }
             catch (Exception Ex)
             {
@@ -59,16 +58,17 @@ namespace Negocio
             }
         }
 
-        public Usuario GetUsuario(string nombreUsuario)
+        public int GetId(string desc)
         {
             try
             {
-                return usuarioData.GetUsuario(nombreUsuario);
+                return materiaData.GetId(desc);
             }
-            catch(Exception Ex)
+            catch (Exception Ex)
             {
                 throw Ex;
             }
         }
+
     }
 }

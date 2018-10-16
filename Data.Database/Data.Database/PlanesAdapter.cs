@@ -125,7 +125,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Planes pl)
+        public void Insert(Planes pl)
         {
             try
             {
@@ -140,7 +140,7 @@ namespace Data.Database
             }
             catch(Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al ingresar usuario", Ex);
+                Exception ExcepcionManejada = new Exception("Error al ingresar el plan", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -149,7 +149,7 @@ namespace Data.Database
             }
         }
 
-        protected void Update(Planes pl)
+        public void Update(Planes pl)
         {
             try
             {

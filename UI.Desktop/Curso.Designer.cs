@@ -32,25 +32,25 @@
             this.tcCurso = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCurso = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tsCurso = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.cursoLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcCurso.ContentPanel.SuspendLayout();
             this.tcCurso.TopToolStripPanel.SuspendLayout();
             this.tcCurso.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).BeginInit();
-            this.tsCurso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cursoLogicBindingSource)).BeginInit();
+            this.tsCurso.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcCurso
@@ -92,7 +92,6 @@
             // 
             this.dgvCurso.AllowUserToAddRows = false;
             this.dgvCurso.AllowUserToDeleteRows = false;
-            this.dgvCurso.AutoGenerateColumns = false;
             this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -101,7 +100,6 @@
             this.anio,
             this.cupo});
             this.tlUsuarios.SetColumnSpan(this.dgvCurso, 2);
-            this.dgvCurso.DataSource = this.cursoLogicBindingSource;
             this.dgvCurso.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCurso.Location = new System.Drawing.Point(3, 3);
             this.dgvCurso.Name = "dgvCurso";
@@ -109,6 +107,45 @@
             this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurso.Size = new System.Drawing.Size(637, 247);
             this.dgvCurso.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "Id Curso";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "idMateria";
+            this.materia.HeaderText = "Materia";
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            // 
+            // comision
+            // 
+            this.comision.DataPropertyName = "idComision";
+            this.comision.HeaderText = "Comision";
+            this.comision.Name = "comision";
+            this.comision.ReadOnly = true;
+            // 
+            // anio
+            // 
+            this.anio.DataPropertyName = "anioCalendario";
+            this.anio.HeaderText = "Año";
+            this.anio.Name = "anio";
+            this.anio.ReadOnly = true;
+            // 
+            // cupo
+            // 
+            this.cupo.DataPropertyName = "cupo";
+            this.cupo.HeaderText = "Cupo";
+            this.cupo.Name = "cupo";
+            this.cupo.ReadOnly = true;
+            // 
+            // cursoLogicBindingSource
+            // 
+            this.cursoLogicBindingSource.DataSource = typeof(Negocio.CursoLogic);
             // 
             // btnActualizar
             // 
@@ -174,45 +211,6 @@
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // cursoLogicBindingSource
-            // 
-            this.cursoLogicBindingSource.DataSource = typeof(Negocio.CursoLogic);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "Id Curso";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // materia
-            // 
-            this.materia.DataPropertyName = "idMateria";
-            this.materia.HeaderText = "Materia";
-            this.materia.Name = "materia";
-            this.materia.ReadOnly = true;
-            // 
-            // comision
-            // 
-            this.comision.DataPropertyName = "idComision";
-            this.comision.HeaderText = "Comision";
-            this.comision.Name = "comision";
-            this.comision.ReadOnly = true;
-            // 
-            // anio
-            // 
-            this.anio.DataPropertyName = "anioCalendario";
-            this.anio.HeaderText = "Año";
-            this.anio.Name = "anio";
-            this.anio.ReadOnly = true;
-            // 
-            // cupo
-            // 
-            this.cupo.DataPropertyName = "cupo";
-            this.cupo.HeaderText = "Cupo";
-            this.cupo.Name = "cupo";
-            this.cupo.ReadOnly = true;
-            // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,9 +227,9 @@
             this.tcCurso.PerformLayout();
             this.tlUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoLogicBindingSource)).EndInit();
             this.tsCurso.ResumeLayout(false);
             this.tsCurso.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoLogicBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

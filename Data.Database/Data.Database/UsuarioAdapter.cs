@@ -44,6 +44,40 @@ namespace Data.Database
             return usuarios;
         }
 
+        public Usuario GetUsuario(string nombreUsuario)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where nombre_usuario = @nombreUsuario", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombreUsuario", SqlDbType.VarChar,50).Value = nombreUsuario;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    usr.Id = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Email = (string)drUsuarios["email"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                }
+
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
+        }
+
         public Entidades.Usuario GetOne(int ID)
         {
             Usuario usr = new Usuario();
@@ -68,7 +102,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar lista de usuarios", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar el usuario", Ex);
                 throw ExcepcionManejada;
             }
             finally
