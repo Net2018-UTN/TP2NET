@@ -82,7 +82,7 @@ namespace UI.web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.DescPlan;
-            this.idEspecialidadTextBox.Text = this.Entity.IdEspecialidad.ToString();
+            this.cbEspecialidad.Text = this.Entity.IdEspecialidad.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace UI.web
 
         private void LoadEntity(Entidades.Planes plan)
         {
-            plan.IdEspecialidad = int.Parse(this.idEspecialidadTextBox.Text);
+            plan.IdEspecialidad = int.Parse(this.cbEspecialidad.SelectedValue);
             plan.DescPlan = this.descripcionTextBox.Text;
         }
 
@@ -109,37 +109,36 @@ namespace UI.web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-
             switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Entidades.Planes();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Entidades.Planes();
-                    this.Entity.Id = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
-            }
-            this.formPanel.Visible = false;
+                {
+                    case FormModes.Alta:
+                        this.Entity = new Entidades.Planes();
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Baja:
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Modificacion:
+                        this.Entity = new Entidades.Planes();
+                        this.Entity.Id = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    default:
+                        break;
+                }
+               this.formPanel.Visible = false;
         }
 
         private void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
-            this.idEspecialidadTextBox.Enabled = enable;
+            this.cbEspecialidad.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -155,7 +154,14 @@ namespace UI.web
 
         private void DeleteEntity(int id)
         {
-            this.Logic.Delete(id);
+            try
+            {
+                this.Logic.Delete(id);
+            }
+            catch (Exception Ex)
+            {
+                Page.Response.Write(Ex.Message);
+            }
         }
 
         protected void AceptarLinkButton_Click(object sender, EventArgs e)
@@ -198,7 +204,7 @@ namespace UI.web
         private void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
-            this.idEspecialidadTextBox.Text = string.Empty;
+            
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

@@ -31,10 +31,17 @@ namespace UI.web
             usu = ul.GetUsuario(txtUsuario.Text);
             if(usu != null && this.txtClave.Text == usu.Clave)
             {
-                Page.Response.Write("Ingreso ok");
-                Session["nombreUsuario"] = txtUsuario.Text;
-                txtUsuario.Text = "";
-                Page.Response.Redirect("~/Default.aspx");
+                if (usu.Habilitado)
+                {
+                    Page.Response.Write("Ingreso ok");
+                    Session["nombreUsuario"] = txtUsuario.Text;
+                    txtUsuario.Text = "";
+                    Page.Response.Redirect("~/Default.aspx"); 
+                }
+                else
+                {
+                    Page.Response.Write("Usuario no habilitado");
+                }
             }
             else
             {
