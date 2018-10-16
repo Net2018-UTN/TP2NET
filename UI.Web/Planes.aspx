@@ -16,23 +16,26 @@
         </asp:GridView>
     </asp:Panel>
 
-    <asp:Panel ID="gridActionsPanel" runat="server" Height="50px">
+    <asp:Panel ID="gridActionsPanel" runat="server" Height="24px">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
 
-    <asp:Panel ID="formPanel" CssClass="input-group" Visible="false" runat="server" Height="79px">
+    <asp:Panel ID="formPanel" Visible="false" runat="server" Height="79px" CssClass="text-danger">
             <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
-            <asp:TextBox ID="descripcionTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="descripcionTextBox" Display="Dynamic" EnableTheming="False" ErrorMessage="El campo no puede estar vacío" ForeColor="Red" ValidationGroup="AllValidators">El campo no puede estar vacío</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="idEspecialidadLabel" runat="server" Text="Especialidad: "></asp:Label>
-            <asp:TextBox ID="idEspecialidadTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="cbEspecialidad" runat="server" DataSourceID="especialidad" DataTextField="Desc_especialidad" DataValueField="Id">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="especialidad" runat="server" SelectMethod="GetAll" TypeName="Negocio.EspecialidadLogic"></asp:ObjectDataSource>
     </asp:Panel>
 
     <asp:Panel ID="formActionsPanel" runat="server">
-            <asp:LinkButton ID="aceptarLinkButton" runat="server" CssClass="btn btn-success" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" CssClass="btn btn-secondary" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" ValidationGroup="AllValidators">Aceptar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
     </asp:Panel>
 
 </asp:Content>

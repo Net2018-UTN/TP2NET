@@ -94,6 +94,15 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
         
         /// <summary>
+        /// Control rfvDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
+        
+        /// <summary>
         /// Control idEspecialidadLabel.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,22 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.Label idEspecialidadLabel;
         
         /// <summary>
-        /// Control idEspecialidadTextBox.
+        /// Control cbEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idEspecialidadTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList cbEspecialidad;
+        
+        /// <summary>
+        /// Control especialidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource especialidad;
         
         /// <summary>
         /// Control formActionsPanel.
