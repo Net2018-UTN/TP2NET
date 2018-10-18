@@ -14,6 +14,7 @@ namespace Entidades
         string apellido;
         string email;
         bool habilitado;
+        int id_persona;
 
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public string Clave { get => clave; set => clave = value; }
@@ -21,5 +22,6 @@ namespace Entidades
         public string Apellido { get => apellido; set => apellido = value; }
         public string Email { get => email; set => email = value; }
         public bool Habilitado { get => habilitado; set => habilitado = value; }
+        public int Id_persona { get => id_persona; set => id_persona = value; }
     }
 }

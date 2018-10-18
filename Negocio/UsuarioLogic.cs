@@ -59,6 +59,19 @@ namespace Negocio
             }
         }
 
+        public int GetTipoUsuario(int id)
+        {
+            try
+            {
+                return usuarioData.GetTipoUsuario(id);
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+
         public Usuario GetUsuario(string nombreUsuario)
         {
             try

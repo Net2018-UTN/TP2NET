@@ -44,6 +44,32 @@ namespace Data.Database
             return usuarios;
         }
 
+        public int GetTipoUsuario(int id)
+        {
+            int tipo;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select tipo_persona from personas p inner join usuarios u on p.id_persona=u.id_persona where p.id_persona = @id_persona", sqlConn);
+                cmdUsuarios.Parameters.Add("@id_persona", SqlDbType.Int).Value = id;
+                tipo = ((int)cmdUsuarios.ExecuteScalar());
+                
+
+
+                
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el tipo", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return tipo;
+        }
+
         public Usuario GetUsuario(string nombreUsuario)
         {
             Usuario usr = new Usuario();
@@ -62,6 +88,7 @@ namespace Data.Database
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Email = (string)drUsuarios["email"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Id_persona = (int)drUsuarios["id_persona"];
                 }
 
                 drUsuarios.Close();
