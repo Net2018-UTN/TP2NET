@@ -32,9 +32,10 @@ namespace UI.web
             if(usu != null && this.txtClave.Text == usu.Clave)
             {
                 if (usu.Habilitado)
-                {
-                    Page.Response.Write("Ingreso ok");
-                    Session["nombreUsuario"] = txtUsuario.Text;
+                {   
+                    Page.Response.Write("Ingreso ok");                    
+                    Session["nombreUsuario"] = usu.NombreUsuario;
+                    Session["tipoUsuario"] = ul.GetTipoUsuario(usu.Id_persona);
                     txtUsuario.Text = "";
                     Page.Response.Redirect("~/Default.aspx"); 
                 }
