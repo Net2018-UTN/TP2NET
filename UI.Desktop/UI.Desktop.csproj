@@ -248,7 +248,9 @@
     </Compile>
     <None Include="Properties\DataSources\Data.Database.Adapter.datasource" />
     <None Include="Properties\DataSources\Data.Database.UsuarioAdapter.datasource" />
+    <None Include="Properties\DataSources\Entidades.Especialidad.datasource" />
     <None Include="Properties\DataSources\Entidades.Persona.datasource" />
+    <None Include="Properties\DataSources\Entidades.Planes.datasource" />
     <None Include="Properties\DataSources\Negocio.BusinessLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.ComisionLogic.datasource" />
     <None Include="Properties\DataSources\Negocio.CursoLogic.datasource" />

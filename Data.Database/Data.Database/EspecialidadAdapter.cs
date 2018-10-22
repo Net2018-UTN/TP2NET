@@ -154,35 +154,5 @@ namespace Data.Database
             }
             esp.State = BusinessEntity.States.Unmodified;
         }
-
-        public int GetId(string desc)
-        {
-            Especialidad esp = new Especialidad();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidades where desc_especialidad = @desc", SqlConn);
-                cmdEspecialidad.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = desc;
-                SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
-                if (drEspecialidad.Read())
-                {
-                    esp.Id = (int)drEspecialidad["id_especialidad"];
-                    esp.Desc_especialidad = (string)drEspecialidad["desc_especialidad"];
-                }
-
-                drEspecialidad.Close();
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada = new Exception("Error al recuperar la especialidad ingresada", Ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return esp.Id;
-
-        }
     }
 }

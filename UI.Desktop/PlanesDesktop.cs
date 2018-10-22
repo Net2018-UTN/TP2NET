@@ -17,6 +17,7 @@ namespace UI.Desktop
         public PlanesDesktop()
         {
             InitializeComponent();
+            this.LlenarCb();
         }
 
         public PlanesDesktop(ModoForm modo) : this()
@@ -34,11 +35,6 @@ namespace UI.Desktop
             this.MapearDeDatos();
         }
 
-        private void PlanesDesktop_Load(object sender, EventArgs e)
-        {
-            this.LlenarCb();
-        }
-
         private Entidades.Planes planActual;
         private Entidades.Especialidad espActual;
 
@@ -49,9 +45,7 @@ namespace UI.Desktop
         {
             this.txtId.Text = this.planActual.Id.ToString();
             this.txtDescripcion.Text = this.planActual.DescPlan;
-
-            this.cbEspecialidad.Text = this.espActual.Desc_especialidad;
-
+            cbEspecialidad.Text = espActual.Desc_especialidad;
 
             if (Modo == ModoForm.Baja)
             {
@@ -77,7 +71,11 @@ namespace UI.Desktop
 
             EspecialidadLogic el = new EspecialidadLogic();
 
-            planActual.IdEspecialidad = el.GetId(this.cbEspecialidad.Text);
+            Entidades.Especialidad esp = new Entidades.Especialidad();
+
+            esp = (Entidades.Especialidad)cbEspecialidad.SelectedItem;
+
+            planActual.IdEspecialidad = esp.Id;
             planActual.DescPlan = this.txtDescripcion.Text;
 
             if (Modo == ModoForm.Alta)
@@ -136,10 +134,7 @@ namespace UI.Desktop
         public void LlenarCb()
         {
             EspecialidadLogic el = new EspecialidadLogic();
-            foreach (Entidades.Especialidad esp in el.GetAll())
-            {
-                this.cbEspecialidad.Items.Add(esp.Desc_especialidad);
-            }
+            cbEspecialidad.DataSource = el.GetAll();
         }
     }
 }
