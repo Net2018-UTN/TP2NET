@@ -135,6 +135,7 @@ namespace UI.Desktop
         {
             EspecialidadLogic el = new EspecialidadLogic();
             cbEspecialidad.DataSource = el.GetAll();
+            cbEspecialidad.SelectedIndex = -1;
         }
     }
 }
