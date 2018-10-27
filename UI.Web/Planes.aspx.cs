@@ -80,6 +80,8 @@ namespace UI.web
 
         private void LoadForm(int id)
         {
+            aceptarLinkButton.Visible = true;
+            cancelarLinkButton.Visible = true;
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.DescPlan;
             this.cbEspecialidad.Text = this.Entity.IdEspecialidad.ToString();
@@ -133,12 +135,15 @@ namespace UI.web
                         break;
                 }
                this.formPanel.Visible = false;
+            aceptarLinkButton.Visible = false;
+            cancelarLinkButton.Visible = false;
         }
 
         private void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
             this.cbEspecialidad.Enabled = enable;
+
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -162,35 +167,6 @@ namespace UI.web
             {
                 Page.Response.Write(Ex.Message);
             }
-        }
-
-        protected void AceptarLinkButton_Click(object sender, EventArgs e)
-        {
-
-            switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Entidades.Planes();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Entidades.Planes();
-                    this.Entity.Id = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
-            }
-            this.formPanel.Visible = false;
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)

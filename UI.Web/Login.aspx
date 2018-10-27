@@ -4,60 +4,33 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+
+    <title>Login</title>
     <style type="text/css">
-        .auto-style1 {
-            height: 23px;
-        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div style="height: 330px; width: 831px">
-            <table style="width: 100%;">
-                <tr>
-                    <td class="auto-style1"></td>
-                    <td class="auto-style1"></td>
-                    <td class="auto-style1">
-            <asp:Label ID="lblBienvenido" runat="server" Text="¡Bienvenido al Sistema!"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">&nbsp;</td>
-                    <td class="auto-style1">
-            <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
-                    </td>
-                    <td class="auto-style1">
-            <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">&nbsp;</td>
-                    <td class="auto-style1">
-            <asp:Label ID="lblClavel" runat="server" Text="Clave"></asp:Label>
-                    </td>
-                    <td class="auto-style1">
-            <asp:TextBox ID="txtClave" Type="Password" runat="server" ></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>
-            <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
-            
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:LinkButton ID="lnkRecordarClave" runat="server" OnClick="lnkRecordarClave_Click">Olvide clave</asp:LinkButton>
-                    </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
-            
+    <h2 class="text-center ">Bienvenido al sistema</h2>
+    <form id="formLogin" runat="server" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <asp:Label CssClass="auto-style1" ID="Label1" runat="server" Text="Usuario"></asp:Label>
+                <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server"></asp:TextBox>
+            </div>
         </div>
+        <div class="row">
+            <div class ="col-md-12">
+                <asp:Label CssClass="auto-style1" ID="Label2" runat="server" Text="Contraseña"></asp:Label>
+                <asp:TextBox ID="txtClave" CssClass="form-control" Type="Password" runat="server"></asp:TextBox>
+            </div>
+        </div>
+        <asp:Button type="button" class="btn btn-primary" ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     </form>
-</body>
+    </body>
 </html>

@@ -7,22 +7,61 @@
     <title>Academia</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <p>
-            <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
-            <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
-        </p>
 </head>
     
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sistema web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <asp:HyperLink CssClass="nav-link" ID="hlHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="Planes" runat="server" NavigateUrl="~/Planes.aspx">Planes</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="Materias" runat="server" NavigateUrl="~/Materias.aspx">Materias</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlPersonas" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlEspecialidades" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlModulos" runat="server" NavigateUrl="~/Modulos.aspx">Modulos</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlModulosUsuarios" runat="server" NavigateUrl="~/ModulosUsuarios.aspx">Modulos Usuarios</asp:HyperLink>
+                </li>
+                <li class="nav-item">
+                    <asp:HyperLink CssClass="nav-link" ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscripciones Alumnos</asp:HyperLink>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <form id="bodyForm" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        </div>      
+    </form>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
-    </form>
     </body>
 </html>

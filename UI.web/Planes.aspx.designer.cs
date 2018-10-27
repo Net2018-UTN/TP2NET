@@ -10,132 +10,150 @@
 namespace UI.web {
     
     
-    public partial class Site {
+    public partial class Planes {
         
         /// <summary>
-        /// Control head.
+        /// Control gridPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel gridPanel;
         
         /// <summary>
-        /// Control hlHome.
+        /// Control gridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlHome;
+        protected global::System.Web.UI.WebControls.GridView gridView;
         
         /// <summary>
-        /// Control Planes.
+        /// Control gridActionsPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Planes;
+        protected global::System.Web.UI.WebControls.Panel gridActionsPanel;
         
         /// <summary>
-        /// Control hlUsuarios.
+        /// Control editarLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
+        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
         
         /// <summary>
-        /// Control hlCursos.
+        /// Control eliminarLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlCursos;
+        protected global::System.Web.UI.WebControls.LinkButton eliminarLinkButton;
         
         /// <summary>
-        /// Control hlComisiones.
+        /// Control nuevoLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlComisiones;
+        protected global::System.Web.UI.WebControls.LinkButton nuevoLinkButton;
         
         /// <summary>
-        /// Control Materias.
+        /// Control formPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Materias;
+        protected global::System.Web.UI.WebControls.Panel formPanel;
         
         /// <summary>
-        /// Control hlPersonas.
+        /// Control descripcionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlPersonas;
+        protected global::System.Web.UI.WebControls.Label descripcionLabel;
         
         /// <summary>
-        /// Control hlEspecialidades.
+        /// Control descripcionTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEspecialidades;
+        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
         
         /// <summary>
-        /// Control hlModulos.
+        /// Control rfvDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlModulos;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
         
         /// <summary>
-        /// Control hlModulosUsuarios.
+        /// Control idEspecialidadLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlModulosUsuarios;
+        protected global::System.Web.UI.WebControls.Label idEspecialidadLabel;
         
         /// <summary>
-        /// Control hlAlumnosInscripciones.
+        /// Control cbEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
+        protected global::System.Web.UI.WebControls.DropDownList cbEspecialidad;
         
         /// <summary>
-        /// Control bodyForm.
+        /// Control especialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm bodyForm;
+        protected global::System.Web.UI.WebControls.ObjectDataSource especialidad;
         
         /// <summary>
-        /// Control bodyContentPlaceHolder.
+        /// Control formActionsPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Panel formActionsPanel;
+        
+        /// <summary>
+        /// Control aceptarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton aceptarLinkButton;
+        
+        /// <summary>
+        /// Control cancelarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton cancelarLinkButton;
     }
 }
