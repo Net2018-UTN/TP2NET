@@ -248,6 +248,8 @@
     </Compile>
     <None Include="Properties\DataSources\Data.Database.Adapter.datasource" />
     <None Include="Properties\DataSources\Data.Database.UsuarioAdapter.datasource" />
+    <None Include="Properties\DataSources\Entidades.AlumnosInscripciones.datasource" />
+    <None Include="Properties\DataSources\Entidades.Curso.datasource" />
     <None Include="Properties\DataSources\Entidades.Especialidad.datasource" />
     <None Include="Properties\DataSources\Entidades.Persona.datasource" />
     <None Include="Properties\DataSources\Entidades.Planes.datasource" />

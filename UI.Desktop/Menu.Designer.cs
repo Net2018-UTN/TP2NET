@@ -32,6 +32,7 @@
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblBienvenido = new System.Windows.Forms.Label();
             this.btnDocentesCursos = new System.Windows.Forms.Button();
             this.btnAlumnosInscripciones = new System.Windows.Forms.Button();
             this.btnModulosUsuarios = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
             this.btnPersonas = new System.Windows.Forms.Button();
-            this.lblBienvenido = new System.Windows.Forms.Label();
             this.mnuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 426);
             this.panel1.TabIndex = 6;
             // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(265, 43);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(237, 25);
+            this.lblBienvenido.TabIndex = 12;
+            this.lblBienvenido.Text = "¡Bienvenido al Sistema!";
+            // 
             // btnDocentesCursos
             // 
             this.btnDocentesCursos.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -112,6 +123,7 @@
             this.btnAlumnosInscripciones.TabIndex = 10;
             this.btnAlumnosInscripciones.Text = "Inscripciones de Alumnos";
             this.btnAlumnosInscripciones.UseVisualStyleBackColor = true;
+            this.btnAlumnosInscripciones.Click += new System.EventHandler(this.btnAlumnosInscripciones_Click);
             // 
             // btnModulosUsuarios
             // 
@@ -209,17 +221,6 @@
             this.btnPersonas.Text = "Personas";
             this.btnPersonas.UseVisualStyleBackColor = true;
             this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
-            // 
-            // lblBienvenido
-            // 
-            this.lblBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenido.Location = new System.Drawing.Point(265, 43);
-            this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(237, 25);
-            this.lblBienvenido.TabIndex = 12;
-            this.lblBienvenido.Text = "¡Bienvenido al Sistema!";
             // 
             // Menu
             // 
