@@ -8,15 +8,13 @@ namespace Entidades
 {
     public class AlumnosInscripciones : BusinessEntity
     {
-        //int id_inscripcion;
-        int id_curso;
-        int id_alumno;
+        int idCurso;
+        int idAlumno;
         string condicion;
         int nota;
 
-        //public int Id_inscripcion { get => id_inscripcion; set => id_inscripcion = value; }
-        public int Id_curso { get => id_curso; set => id_curso = value; }
-        public int Id_alumno { get => id_alumno; set => id_alumno = value; }
+        public int IdCurso { get => idCurso; set => idCurso = value; }
+        public int IdAlumno { get => idAlumno; set => idAlumno = value; }
         public string Condicion { get => condicion; set => condicion = value; }
         public int Nota { get => nota; set => nota = value; }
     }
