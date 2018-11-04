@@ -38,11 +38,6 @@ namespace UI.Desktop
 
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPersonas_Click(object sender, EventArgs e)
         {
             Persona persona = new Persona();
