@@ -94,24 +94,6 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.HyperLink hlEspecialidades;
         
         /// <summary>
-        /// Control hlModulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlModulos;
-        
-        /// <summary>
-        /// Control hlModulosUsuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlModulosUsuarios;
-        
-        /// <summary>
         /// Control hlAlumnosInscripciones.
         /// </summary>
         /// <remarks>

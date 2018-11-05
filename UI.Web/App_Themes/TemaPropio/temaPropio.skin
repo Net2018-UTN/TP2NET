@@ -1,0 +1,4 @@
+<asp:GridView CssClass="table table-dark table-hover" runat="server" 
+    SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"/>
+
+<asp:LinkButton CssClass="btn btn-primary" runat="server"/>

@@ -42,13 +42,7 @@
                     <asp:HyperLink CssClass="nav-link" ID="hlEspecialidades" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
                 </li>
                 <li class="nav-item">
-                    <asp:HyperLink CssClass="nav-link" ID="hlModulos" runat="server" NavigateUrl="~/Modulos.aspx">Modulos</asp:HyperLink>
-                </li>
-                <li class="nav-item">
-                    <asp:HyperLink CssClass="nav-link" ID="hlModulosUsuarios" runat="server" NavigateUrl="~/ModulosUsuarios.aspx">Modulos Usuarios</asp:HyperLink>
-                </li>
-                <li class="nav-item">
-                    <asp:HyperLink CssClass="nav-link" ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscripciones Alumnos</asp:HyperLink>
+                    <asp:HyperLink CssClass="nav-link" ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnoInscripcion.aspx">Inscripciones</asp:HyperLink>
                 </li>
             </ul>
         </div>
