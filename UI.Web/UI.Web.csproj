@@ -68,7 +68,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnoInscripcion.aspx" />
     <Content Include="Curso.aspx" />
+    <Content Include="App_Themes\TemaPropio\temaPropio.skin" />
     <None Include="packages.config" />
     <Content Include="Comision.aspx" />
     <Content Include="Login.aspx" />
@@ -88,6 +90,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoInscripcion.aspx.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnoInscripcion.aspx.designer.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comision.aspx.cs">
       <DependentUpon>Comision.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
