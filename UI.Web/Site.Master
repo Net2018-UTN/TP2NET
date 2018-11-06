@@ -27,7 +27,7 @@
                     <asp:HyperLink CssClass="nav-link" ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
                 </li>
                 <li class="nav-item">
-                    <asp:HyperLink CssClass="nav-link" ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
+                    <asp:HyperLink CssClass="nav-link" ID="hlCursos" runat="server" NavigateUrl="~/Curso.aspx">Cursos</asp:HyperLink>
                 </li>
                 <li class="nav-item">
                     <asp:HyperLink CssClass="nav-link" ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>

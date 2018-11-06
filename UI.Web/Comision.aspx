@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Comisiones" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comision.aspx.cs" Inherits="UI.web.Comision" %>
+﻿<%@ Page Theme="TemaPropio" Title="Comisiones" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comision.aspx.cs" Inherits="UI.web.Comision" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat ="server" Height="149px">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
@@ -10,10 +10,8 @@
                 <asp:BoundField HeaderText="Descp" DataField="Descp" />
                 <asp:BoundField HeaderText="Año" DataField="Anio" />
                 <asp:BoundField HeaderText="Id Plan" DataField="Id_plan" />
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
-                
+                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />               
             </Columns>
-
         </asp:GridView>
 
     </asp:Panel>
@@ -22,7 +20,7 @@
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
-     <asp:Panel ID="formPanel" Visible="false" runat="server">
+     <asp:Panel CssClass="col-md-6" ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="descpLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="descpTextBox" runat="server"></asp:TextBox>
         <br />

@@ -10,7 +10,7 @@
 namespace UI.web {
     
     
-    public partial class Comision {
+    public partial class WebForm1 {
         
         /// <summary>
         /// Control gridPanel.
@@ -76,58 +76,76 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.Panel formPanel;
         
         /// <summary>
-        /// Control descpLabel.
+        /// Control idMateriaLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descpLabel;
+        protected global::System.Web.UI.WebControls.Label idMateriaLabel;
         
         /// <summary>
-        /// Control descpTextBox.
+        /// Control idMateriaTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descpTextBox;
+        protected global::System.Web.UI.WebControls.TextBox idMateriaTextBox;
         
         /// <summary>
-        /// Control anioLabel.
+        /// Control idComisionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label anioLabel;
+        protected global::System.Web.UI.WebControls.Label idComisionLabel;
         
         /// <summary>
-        /// Control anioTextBox.
+        /// Control idComisionTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox anioTextBox;
+        protected global::System.Web.UI.WebControls.TextBox idComisionTextBox;
         
         /// <summary>
-        /// Control id_planLabel.
+        /// Control anioCalendarioLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label id_planLabel;
+        protected global::System.Web.UI.WebControls.Label anioCalendarioLabel;
         
         /// <summary>
-        /// Control idPlanTextBox.
+        /// Control anioCalendarioTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idPlanTextBox;
+        protected global::System.Web.UI.WebControls.TextBox anioCalendarioTextBox;
+        
+        /// <summary>
+        /// Control cupoLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label cupoLabel;
+        
+        /// <summary>
+        /// Control cupoTextBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cupoTextBox;
         
         /// <summary>
         /// Control formActionsPanel.
