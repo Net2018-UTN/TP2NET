@@ -22,11 +22,11 @@ namespace Data.Database
                 while(drAlumnosInscripciones.Read())
                 {
                     AlumnosInscripciones ai = new AlumnosInscripciones();
-                    ai.Id_alumno = (int)drAlumnosInscripciones["id_alumno"];
-                    ai.Id_curso = (int)drAlumnosInscripciones["id_curso"];
-                    //ai.Id_inscripcion = (int)drAlumnos_Inscripciones["id_inscripcion"];
+                    ai.IdAlumno = (int)drAlumnosInscripciones["id_alumno"];
+                    ai.IdCurso = (int)drAlumnosInscripciones["id_curso"];
                     ai.Nota = (int)drAlumnosInscripciones["nota"];
                     ai.Condicion = (string)drAlumnosInscripciones["condicion"];
+                    ai.Id = (int)drAlumnosInscripciones["id_inscripcion"];
 
                     alumnosInscripciones.Add(ai);
                 }
@@ -58,8 +58,8 @@ namespace Data.Database
                 if (drAlumnosInscripciones.Read())
                 {
                     ai.Id = (int)drAlumnosInscripciones["id_inscripcion"];
-                    ai.Id_curso = (int)drAlumnosInscripciones["id_curso"];
-                    ai.Id_alumno = (int)drAlumnosInscripciones["id_alumno"];
+                    ai.IdCurso = (int)drAlumnosInscripciones["id_curso"];
+                    ai.IdAlumno = (int)drAlumnosInscripciones["id_alumno"];
                     ai.Condicion = (string)drAlumnosInscripciones["condicion"];
                     ai.Nota = (int)drAlumnosInscripciones["nota"];
                 }
@@ -85,14 +85,14 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlumnos_Inscripciones = new SqlCommand("select * from alumnos_inscripciones where id_inscripciones = @id", SqlConn);
+                SqlCommand cmdAlumnos_Inscripciones = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion = @id", SqlConn);
                 cmdAlumnos_Inscripciones.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader drAlumnos_Inscripciones = cmdAlumnos_Inscripciones.ExecuteReader();
                 if (drAlumnos_Inscripciones.Read())
                 {
                     ai.Id = (int)drAlumnos_Inscripciones["id_inscripcion"];
-                    ai.Id_curso = (int)drAlumnos_Inscripciones["id_curso"];
-                    ai.Id_alumno = (int)drAlumnos_Inscripciones["id_alumno"];
+                    ai.IdCurso = (int)drAlumnos_Inscripciones["id_curso"];
+                    ai.IdAlumno = (int)drAlumnos_Inscripciones["id_alumno"];
                     ai.Condicion = (string)drAlumnos_Inscripciones["condicion"];
                     ai.Nota = (int)drAlumnos_Inscripciones["nota"];
                 }
@@ -137,12 +137,11 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand(
-                    "insert into alumnos_inscripciones (id_inscripcion, id_alumno, id_curso, condicion, nota)" +
-                    "values (@id_inscripcion, @id_alumno, @id_curso, @condicion, @nota)" +
+                    "insert into alumnos_inscripciones (id_alumno, id_curso, condicion, nota)" +
+                    "values (@id_alumno, @id_curso, @condicion, @nota)" +
                     "select @@identity", sqlConn);
-                cmdInsert.Parameters.Add("@id_inscripcion", SqlDbType.Int).Value = ai.Id;
-                cmdInsert.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ai.Id_alumno;
-                cmdInsert.Parameters.Add("@id_curso", SqlDbType.Int).Value = ai.Id_curso;
+                cmdInsert.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ai.IdAlumno;
+                cmdInsert.Parameters.Add("@id_curso", SqlDbType.Int).Value = ai.IdCurso;
                 cmdInsert.Parameters.Add("@condicion", SqlDbType.Text).Value = ai.Condicion;
                 cmdInsert.Parameters.Add("@nota", SqlDbType.Int).Value = ai.Nota;
 
@@ -165,10 +164,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand(
-                    "update alumnos_inscripciones set id_alumno = @id_al, id_curso = @id_cur, condicion = @cond, nota = @nota where id_inscripcion = @id", sqlConn);
-                cmdUpdate.Parameters.Add("@id_inscripcion", SqlDbType.Int).Value = ai.Id;
-                cmdUpdate.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ai.Id_alumno;
-                cmdUpdate.Parameters.Add("@id_curso", SqlDbType.Int).Value = ai.Id_curso;
+                    "update alumnos_inscripciones set id_alumno = @id_alumno, id_curso = @id_curso, condicion = @condicion, nota = @nota where id_inscripcion = @id", sqlConn);
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = ai.Id;
+                cmdUpdate.Parameters.Add("@id_alumno", SqlDbType.Int).Value = ai.IdAlumno;
+                cmdUpdate.Parameters.Add("@id_curso", SqlDbType.Int).Value = ai.IdCurso;
                 cmdUpdate.Parameters.Add("@condicion", SqlDbType.Text).Value = ai.Condicion;
                 cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = ai.Nota;
                 cmdUpdate.ExecuteNonQuery();

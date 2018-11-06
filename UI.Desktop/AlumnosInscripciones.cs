@@ -14,6 +14,9 @@ namespace UI.Desktop
 {
     public partial class AlumnosInscripciones : Form
     {
+        Entidades.Persona alumno = new Entidades.Persona();
+        AlumnosInscripcionesLogic ail = new AlumnosInscripcionesLogic();
+
         public AlumnosInscripciones()
         {
             InitializeComponent();
@@ -22,7 +25,6 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            AlumnosInscripcionesLogic ail = new AlumnosInscripcionesLogic();
             this.dgvAI.DataSource = ail.GetAll();
         }
 
@@ -40,5 +42,40 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void stbNuevo_Click(object sender, EventArgs e)
+        {
+            AlumnosInscripcionesDesktop formAlumno = new AlumnosInscripcionesDesktop(ApplicationForm.ModoForm.Alta);
+            formAlumno.ShowDialog();
+            this.Listar();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvAI.SelectedRows.Count != 0)
+            {
+                int ID = ((Entidades.AlumnosInscripciones)this.dgvAI.SelectedRows[0].DataBoundItem).Id;
+                AlumnosInscripcionesDesktop formAlumno = new AlumnosInscripcionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formAlumno.ShowDialog();
+                this.Listar();
+            }
+            else
+                MessageBox.Show("Debe seleccionar una inscripción", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvAI.SelectedRows.Count != 0)
+            {
+                int ID = ((Entidades.AlumnosInscripciones)this.dgvAI.SelectedRows[0].DataBoundItem).Id;
+                AlumnosInscripcionesDesktop formAlumno = new AlumnosInscripcionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+                formAlumno.ShowDialog();
+                this.Listar();
+            }
+            else
+                MessageBox.Show("Debe seleccionar una inscripción", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
     }
 }

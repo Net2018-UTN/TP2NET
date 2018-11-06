@@ -68,12 +68,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnoInscripcion.aspx" />
     <Content Include="Curso.aspx" />
+    <Content Include="App_Themes\TemaPropio\temaPropio.skin" />
     <None Include="packages.config" />
     <Content Include="Comision.aspx" />
     <Content Include="DocentesCursos.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -92,6 +95,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoInscripcion.aspx.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnoInscripcion.aspx.designer.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comision.aspx.cs">
       <DependentUpon>Comision.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +136,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>

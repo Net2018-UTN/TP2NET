@@ -10,7 +10,7 @@
 namespace UI.web {
     
     
-    public partial class Comision {
+    public partial class Planes {
         
         /// <summary>
         /// Control gridPanel.
@@ -76,58 +76,58 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.Panel formPanel;
         
         /// <summary>
-        /// Control descpLabel.
+        /// Control descripcionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descpLabel;
+        protected global::System.Web.UI.WebControls.Label descripcionLabel;
         
         /// <summary>
-        /// Control descpTextBox.
+        /// Control descripcionTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descpTextBox;
+        protected global::System.Web.UI.WebControls.TextBox descripcionTextBox;
         
         /// <summary>
-        /// Control anioLabel.
+        /// Control rfvDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label anioLabel;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
         
         /// <summary>
-        /// Control anioTextBox.
+        /// Control idEspecialidadLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox anioTextBox;
+        protected global::System.Web.UI.WebControls.Label idEspecialidadLabel;
         
         /// <summary>
-        /// Control id_planLabel.
+        /// Control cbEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label id_planLabel;
+        protected global::System.Web.UI.WebControls.DropDownList cbEspecialidad;
         
         /// <summary>
-        /// Control idPlanTextBox.
+        /// Control especialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idPlanTextBox;
+        protected global::System.Web.UI.WebControls.ObjectDataSource especialidad;
         
         /// <summary>
         /// Control formActionsPanel.

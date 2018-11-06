@@ -38,11 +38,6 @@ namespace UI.Desktop
 
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPersonas_Click(object sender, EventArgs e)
         {
             Persona persona = new Persona();
@@ -89,6 +84,10 @@ namespace UI.Desktop
         {
             ReporteDocentes rep = new ReporteDocentes();
             rep.ShowDialog();
+        private void btnAlumnosInscripciones_Click(object sender, EventArgs e)
+        {
+            AlumnosInscripciones alumnosInscripciones = new AlumnosInscripciones();
+            alumnosInscripciones.ShowDialog();
         }
     }
 }

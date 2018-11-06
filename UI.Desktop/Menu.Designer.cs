@@ -35,8 +35,6 @@
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.btnDocentesCursos = new System.Windows.Forms.Button();
             this.btnAlumnosInscripciones = new System.Windows.Forms.Button();
-            this.btnModulosUsuarios = new System.Windows.Forms.Button();
-            this.btnModulos = new System.Windows.Forms.Button();
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
@@ -80,8 +78,6 @@
             this.panel1.Controls.Add(this.lblBienvenido);
             this.panel1.Controls.Add(this.btnDocentesCursos);
             this.panel1.Controls.Add(this.btnAlumnosInscripciones);
-            this.panel1.Controls.Add(this.btnModulosUsuarios);
-            this.panel1.Controls.Add(this.btnModulos);
             this.panel1.Controls.Add(this.btnEspecialidades);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.btnPlanes);
@@ -109,7 +105,7 @@
             // btnDocentesCursos
             // 
             this.btnDocentesCursos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDocentesCursos.Location = new System.Drawing.Point(317, 393);
+            this.btnDocentesCursos.Location = new System.Drawing.Point(317, 335);
             this.btnDocentesCursos.Name = "btnDocentesCursos";
             this.btnDocentesCursos.Size = new System.Drawing.Size(144, 23);
             this.btnDocentesCursos.TabIndex = 11;
@@ -119,37 +115,18 @@
             // btnAlumnosInscripciones
             // 
             this.btnAlumnosInscripciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAlumnosInscripciones.Location = new System.Drawing.Point(317, 364);
+            this.btnAlumnosInscripciones.Location = new System.Drawing.Point(317, 306);
             this.btnAlumnosInscripciones.Name = "btnAlumnosInscripciones";
             this.btnAlumnosInscripciones.Size = new System.Drawing.Size(144, 23);
             this.btnAlumnosInscripciones.TabIndex = 10;
             this.btnAlumnosInscripciones.Text = "Inscripciones de Alumnos";
             this.btnAlumnosInscripciones.UseVisualStyleBackColor = true;
-            // 
-            // btnModulosUsuarios
-            // 
-            this.btnModulosUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnModulosUsuarios.Location = new System.Drawing.Point(317, 161);
-            this.btnModulosUsuarios.Name = "btnModulosUsuarios";
-            this.btnModulosUsuarios.Size = new System.Drawing.Size(144, 23);
-            this.btnModulosUsuarios.TabIndex = 9;
-            this.btnModulosUsuarios.Text = "Modulos Usuarios";
-            this.btnModulosUsuarios.UseVisualStyleBackColor = true;
-            // 
-            // btnModulos
-            // 
-            this.btnModulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnModulos.Location = new System.Drawing.Point(317, 190);
-            this.btnModulos.Name = "btnModulos";
-            this.btnModulos.Size = new System.Drawing.Size(144, 23);
-            this.btnModulos.TabIndex = 8;
-            this.btnModulos.Text = "Modulos";
-            this.btnModulos.UseVisualStyleBackColor = true;
+            this.btnAlumnosInscripciones.Click += new System.EventHandler(this.btnAlumnosInscripciones_Click);
             // 
             // btnEspecialidades
             // 
             this.btnEspecialidades.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEspecialidades.Location = new System.Drawing.Point(317, 277);
+            this.btnEspecialidades.Location = new System.Drawing.Point(317, 219);
             this.btnEspecialidades.Name = "btnEspecialidades";
             this.btnEspecialidades.Size = new System.Drawing.Size(144, 23);
             this.btnEspecialidades.TabIndex = 7;
@@ -171,7 +148,7 @@
             // btnPlanes
             // 
             this.btnPlanes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnPlanes.Location = new System.Drawing.Point(317, 219);
+            this.btnPlanes.Location = new System.Drawing.Point(317, 161);
             this.btnPlanes.Name = "btnPlanes";
             this.btnPlanes.Size = new System.Drawing.Size(144, 23);
             this.btnPlanes.TabIndex = 5;
@@ -182,7 +159,7 @@
             // btnComisiones
             // 
             this.btnComisiones.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnComisiones.Location = new System.Drawing.Point(317, 306);
+            this.btnComisiones.Location = new System.Drawing.Point(317, 248);
             this.btnComisiones.Name = "btnComisiones";
             this.btnComisiones.Size = new System.Drawing.Size(144, 23);
             this.btnComisiones.TabIndex = 4;
@@ -193,7 +170,7 @@
             // btnMaterias
             // 
             this.btnMaterias.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMaterias.Location = new System.Drawing.Point(317, 335);
+            this.btnMaterias.Location = new System.Drawing.Point(317, 277);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(144, 23);
             this.btnMaterias.TabIndex = 3;
@@ -204,7 +181,7 @@
             // btnCursos
             // 
             this.btnCursos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCursos.Location = new System.Drawing.Point(317, 248);
+            this.btnCursos.Location = new System.Drawing.Point(317, 190);
             this.btnCursos.Name = "btnCursos";
             this.btnCursos.Size = new System.Drawing.Size(144, 23);
             this.btnCursos.TabIndex = 2;
@@ -246,7 +223,6 @@
             this.Name = "Menu";
             this.Text = "Academia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.Shown += new System.EventHandler(this.Menu_Shown);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
@@ -268,8 +244,6 @@
         private System.Windows.Forms.Button btnPersonas;
         private System.Windows.Forms.Button btnDocentesCursos;
         private System.Windows.Forms.Button btnAlumnosInscripciones;
-        private System.Windows.Forms.Button btnModulosUsuarios;
-        private System.Windows.Forms.Button btnModulos;
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnPlanes;
