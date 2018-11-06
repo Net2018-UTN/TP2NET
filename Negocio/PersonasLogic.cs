@@ -37,7 +37,19 @@ namespace Negocio
                 throw Ex;
             }
         }
-       
+        public List<Persona> GetByTipo(int tipo)
+        {
+            try
+            {
+                return data.GetByTipo(tipo);
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de personas", Ex);
+                throw ExcepcionManejada;
+            }
         }
+
+    }
     }
 

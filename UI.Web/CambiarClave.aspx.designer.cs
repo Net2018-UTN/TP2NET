@@ -7,118 +7,135 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.web {
+namespace UI.Web {
     
     
-    public partial class Site {
+    public partial class CambiarClave {
         
         /// <summary>
-        /// Control head.
+        /// Control lblClaveVieja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblClaveVieja;
         
         /// <summary>
-        /// Control hlHome.
+        /// Control txtClaveVieja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlHome;
+        protected global::System.Web.UI.WebControls.TextBox txtClaveVieja;
         
         /// <summary>
-        /// Control Planes.
+        /// Control rfvClaveVieja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Planes;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClaveVieja;
         
         /// <summary>
-        /// Control hlUsuarios.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-
-        /// Control hlCursos.
+        /// Control lblClaveNueva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlCursos;
+        protected global::System.Web.UI.WebControls.Label lblClaveNueva;
         
         /// <summary>
-        /// Control hlComisiones.
+        /// Control txtClaveNueva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlComisiones;
+        protected global::System.Web.UI.WebControls.TextBox txtClaveNueva;
         
         /// <summary>
-        /// Control Materias.
+        /// Control rfvClaveNueva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Materias;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvClaveNueva;
         
         /// <summary>
-        /// Control hlPersonas.
+        /// Control lblRepetirClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlPersonas;
+        protected global::System.Web.UI.WebControls.Label lblRepetirClave;
         
         /// <summary>
-        /// Control hlEspecialidades.
+        /// Control txtRepetirClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEspecialidades;
+        protected global::System.Web.UI.WebControls.TextBox txtRepetirClave;
         
         /// <summary>
-        /// Control hlAlumnosInscripciones.
+        /// Control rfvRepetirClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRepetirClave;
         
         /// <summary>
-        /// Control bodyForm.
+        /// Control cvClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm bodyForm;
+        protected global::System.Web.UI.WebControls.CompareValidator cvClave;
         
         /// <summary>
-        /// Control bodyContentPlaceHolder.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        
+        /// <summary>
+        /// Control btnAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnAceptar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnCancelar;
     }
 }

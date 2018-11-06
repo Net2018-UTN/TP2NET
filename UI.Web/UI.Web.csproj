@@ -73,6 +73,8 @@
     <Content Include="App_Themes\TemaPropio\temaPropio.skin" />
     <None Include="packages.config" />
     <Content Include="Comision.aspx" />
+    <Content Include="DocentesCursos.aspx" />
+    <Content Include="Especialidades.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
@@ -88,7 +90,9 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Usuarios.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoInscripcion.aspx.cs">
@@ -111,6 +115,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.designer.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades.aspx.cs">
+      <DependentUpon>Especialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Especialidades.aspx.designer.cs">
+      <DependentUpon>Especialidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

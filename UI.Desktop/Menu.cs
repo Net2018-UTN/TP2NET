@@ -80,6 +80,10 @@ namespace UI.Desktop
             especialidad.ShowDialog();
         }
 
+        private void btnReporteDocentes_Click(object sender, EventArgs e)
+        {
+            ReporteDocentes rep = new ReporteDocentes();
+            rep.ShowDialog();
         private void btnAlumnosInscripciones_Click(object sender, EventArgs e)
         {
             AlumnosInscripciones alumnosInscripciones = new AlumnosInscripciones();
