@@ -32,6 +32,7 @@
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReporteDocentes = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.btnDocentesCursos = new System.Windows.Forms.Button();
             this.btnAlumnosInscripciones = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
             this.btnPersonas = new System.Windows.Forms.Button();
-            this.btnReporteDocentes = new System.Windows.Forms.Button();
             this.mnuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 471);
             this.panel1.TabIndex = 6;
             // 
+            // btnReporteDocentes
+            // 
+            this.btnReporteDocentes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReporteDocentes.Location = new System.Drawing.Point(317, 422);
+            this.btnReporteDocentes.Name = "btnReporteDocentes";
+            this.btnReporteDocentes.Size = new System.Drawing.Size(144, 23);
+            this.btnReporteDocentes.TabIndex = 13;
+            this.btnReporteDocentes.Text = "Reporte Docentes";
+            this.btnReporteDocentes.UseVisualStyleBackColor = true;
+            this.btnReporteDocentes.Click += new System.EventHandler(this.btnReporteDocentes_Click);
+            // 
             // lblBienvenido
             // 
             this.lblBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -111,6 +122,7 @@
             this.btnDocentesCursos.TabIndex = 11;
             this.btnDocentesCursos.Text = "Docentes de Cursos";
             this.btnDocentesCursos.UseVisualStyleBackColor = true;
+            this.btnDocentesCursos.Click += new System.EventHandler(this.btnDocentesCursos_Click);
             // 
             // btnAlumnosInscripciones
             // 
@@ -199,17 +211,6 @@
             this.btnPersonas.Text = "Personas";
             this.btnPersonas.UseVisualStyleBackColor = true;
             this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
-            // 
-            // btnReporteDocentes
-            // 
-            this.btnReporteDocentes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReporteDocentes.Location = new System.Drawing.Point(317, 422);
-            this.btnReporteDocentes.Name = "btnReporteDocentes";
-            this.btnReporteDocentes.Size = new System.Drawing.Size(144, 23);
-            this.btnReporteDocentes.TabIndex = 13;
-            this.btnReporteDocentes.Text = "Reporte Docentes";
-            this.btnReporteDocentes.UseVisualStyleBackColor = true;
-            this.btnReporteDocentes.Click += new System.EventHandler(this.btnReporteDocentes_Click);
             // 
             // Menu
             // 

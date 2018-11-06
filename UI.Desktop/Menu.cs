@@ -84,10 +84,17 @@ namespace UI.Desktop
         {
             ReporteDocentes rep = new ReporteDocentes();
             rep.ShowDialog();
+        }
         private void btnAlumnosInscripciones_Click(object sender, EventArgs e)
         {
             AlumnosInscripciones alumnosInscripciones = new AlumnosInscripciones();
             alumnosInscripciones.ShowDialog();
+        }
+
+        private void btnDocentesCursos_Click(object sender, EventArgs e)
+        {
+            UI.Desktop.DocentesCursos docentesCursos = new DocentesCursos();
+            docentesCursos.ShowDialog();
         }
     }
 }

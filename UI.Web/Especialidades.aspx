@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Especialidades.aspx.cs" Inherits="UI.web.Especialidades" %>
+﻿<%@ Page Title="Especialidades" Theme="TemaPropio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Especialidades.aspx.cs" Inherits="UI.web.Especialidades" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-     <asp:Panel ID="gridPanel" runat ="server" Height="149px">
+     <asp:Panel ID="gridPanel" runat ="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White"
@@ -19,7 +19,8 @@
         <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
         <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
-    <asp:Panel ID="formPanel" Visible="false" runat="server">
+
+    <asp:Panel CssClass="col-md-6" ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idLabel" runat="server" Text="Id Especialidad: "></asp:Label>
         <asp:TextBox ID="idTextBox" runat="server" Enabled="False"></asp:TextBox>
         <br />
