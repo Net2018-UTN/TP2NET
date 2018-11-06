@@ -2,3 +2,7 @@
     SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White"/>
 
 <asp:LinkButton CssClass="btn btn-primary" runat="server"/>
+
+<asp:TextBox runat="server" CssClass="form-control"></asp:TextBox>
+
+<asp:DropDownList runat="server" CssClass="form-control" />
