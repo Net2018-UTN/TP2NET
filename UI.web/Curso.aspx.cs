@@ -9,16 +9,16 @@ using Entidades;
 
 namespace UI.web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
-        UsuarioLogic _logic;
-        private UsuarioLogic Logic
+        CursoLogic _logic;
+        private CursoLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new UsuarioLogic();
+                    _logic = new CursoLogic();
                 }
                 return _logic;
             }
@@ -40,16 +40,18 @@ namespace UI.web
 
         public enum FormModes
         {
-            Alta, Baja, Modificacion
+            Alta,
+            Baja,
+            Modificacion
         }
-        
+
         public FormModes FormMode
         {
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
 
-        private Usuario Entity
+        private Curso Entity
         {
             get;
             set;
@@ -78,51 +80,42 @@ namespace UI.web
 
         private void LoadForm(int id)
         {
-                this.Entity = this.Logic.GetOne(id);
-                this.nombreTextBox.Text = this.Entity.Nombre;
-                this.apellidoTextBox.Text = this.Entity.Apellido;
-                this.emailTextBox.Text = this.Entity.Email;
-                this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-                this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.Entity = this.Logic.GetOne(id);
+            this.idMateriaTextBox.Text = this.Entity.IdMateria.ToString();
+            this.idComisionTextBox.Text = this.Entity.IdComision.ToString();
+            this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
+            this.cupoTextBox.Text = this.Entity.Cupo.ToString();
         }
 
-        private void LoadEntity(Usuario usuario)
+        private void LoadEntity(Curso curso)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            curso.IdMateria = int.Parse(this.idMateriaTextBox.Text);
+            curso.IdComision = int.Parse(this.idComisionTextBox.Text);
+            curso.AnioCalendario = int.Parse(this.anioCalendarioTextBox.Text);
+            curso.Cupo = int.Parse(this.cupoTextBox.Text);
         }
 
-        private void SaveEntity(Usuario usuario)
+        private void SaveEntity(Curso curso)
         {
-            this.Logic.Save(usuario);
+            this.Logic.Save(curso);
         }
 
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
-        }
-
-        private void DeleteEntity(int id)
-        {
-            this.Logic.Delete(id);
+            this.idMateriaTextBox.Enabled = enable;
+            this.idComisionTextBox.Enabled = enable;
+            this.anioCalendarioTextBox.Enabled = enable;
+            this.cupoTextBox.Enabled = enable;
+            this.idMateriaLabel.Visible = enable;
+            this.idComisionLabel.Visible = enable;
+            this.anioCalendarioLabel.Visible = enable;
+            this.cupoLabel.Visible = enable;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                formActionsPanel.Visible = true;
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
@@ -130,13 +123,45 @@ namespace UI.web
             }
         }
 
+        protected void eliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.LoadForm(this.SelectedID);
+                this.EnableForm(false);
+            }
+        }
+
+        protected void nuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = true;
+            this.ClearForm();
+            this.FormMode = FormModes.Alta;
+            this.EnableForm(true);
+        }
+
+        private void ClearForm()
+        {
+            this.idMateriaTextBox.Text = string.Empty;
+            this.idComisionTextBox.Text = string.Empty;
+            this.anioCalendarioTextBox.Text = string.Empty;
+            this.cupoTextBox.Text = string.Empty;
+        }
+
+        private void DeleteEntity(int id)
+        {
+            this.Logic.Delete(id);
+        }
+
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-        
+
             switch (this.FormMode)
-                {
+            {
                 case FormModes.Alta:
-                    this.Entity = new Usuario();
+                    this.Entity = new Curso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -146,7 +171,7 @@ namespace UI.web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
+                    this.Entity = new Curso();
                     this.Entity.Id = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
@@ -155,38 +180,8 @@ namespace UI.web
                     break;
                 default:
                     break;
-                }
+            }
             this.formPanel.Visible = false;
-            }
-
-        protected void eliminarLinkButton_Click(object sender, EventArgs e)
-        {
-            if (this.IsEntitySelected)
-            {
-                formActionsPanel.Visible = true;
-                this.formPanel.Visible = true;
-                this.FormMode = FormModes.Baja;
-                this.LoadForm(this.SelectedID);
-                this.EnableForm(false);
-            }
-        }
-
-        private void ClearForm()
-        {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
-            this.nombreUsuarioTextBox.Text = string.Empty;
-            this.habilitadoCheckBox.Checked = false;
-        }
-
-        protected void nuevoLinkButton_Click(object sender, EventArgs e)
-        {
-            formActionsPanel.Visible = true;
-            this.formPanel.Visible = true;
-            this.ClearForm();
-            this.FormMode = FormModes.Alta;
-            this.EnableForm(true);
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

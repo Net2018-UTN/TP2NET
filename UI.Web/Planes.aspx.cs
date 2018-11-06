@@ -80,8 +80,6 @@ namespace UI.web
 
         private void LoadForm(int id)
         {
-            aceptarLinkButton.Visible = true;
-            cancelarLinkButton.Visible = true;
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.DescPlan;
             this.cbEspecialidad.Text = this.Entity.IdEspecialidad.ToString();
@@ -91,6 +89,7 @@ namespace UI.web
         {
             if (this.IsEntitySelected)
             {
+                formActionsPanel.Visible = true;
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
@@ -171,6 +170,7 @@ namespace UI.web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+            formActionsPanel.Visible = true;
             this.formPanel.Visible = true;
             this.ClearForm();
             this.FormMode = FormModes.Alta;
