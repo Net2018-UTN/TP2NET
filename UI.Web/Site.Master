@@ -10,6 +10,8 @@
     <p>
             <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
             <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
+            <asp:HyperLink ID="hlUsuarios0" runat="server" NavigateUrl="~/DocentesCursos.aspx">DocentesCursos</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
         </p>
 </head>
     

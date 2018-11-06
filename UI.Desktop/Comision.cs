@@ -20,10 +20,7 @@ namespace UI.Desktop
             this.dgvComisiones.AutoGenerateColumns = false;
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
        
 

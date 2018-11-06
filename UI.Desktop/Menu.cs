@@ -84,5 +84,11 @@ namespace UI.Desktop
             Especialidad especialidad = new Especialidad();
             especialidad.ShowDialog();
         }
+
+        private void btnReporteDocentes_Click(object sender, EventArgs e)
+        {
+            ReporteDocentes rep = new ReporteDocentes();
+            rep.ShowDialog();
+        }
     }
 }
