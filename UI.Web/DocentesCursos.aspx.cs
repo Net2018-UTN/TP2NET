@@ -91,8 +91,8 @@ namespace UI.web
         private void LoadEntity(DocenteCurso dc)
         {
             
-            dc.IdCurso = int.Parse(this.DropDownList1.Text);
-            dc.IdDocente = int.Parse(this.DropDownList2.Text);
+            dc.IdCurso = int.Parse(this.DropDownList1.SelectedValue);
+            dc.IdDocente = int.Parse(this.DropDownList2.SelectedValue);
             dc.Cargo = this.DropDownList3.Text;
             
         }
