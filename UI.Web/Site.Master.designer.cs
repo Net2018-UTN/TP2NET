@@ -49,7 +49,6 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
         
         /// <summary>
-
         /// Control hlCursos.
         /// </summary>
         /// <remarks>
@@ -102,6 +101,15 @@ namespace UI.web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
+        
+        /// <summary>
+        /// Control hlDocentesCursos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlDocentesCursos;
         
         /// <summary>
         /// Control bodyForm.

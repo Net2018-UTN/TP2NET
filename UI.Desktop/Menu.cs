@@ -111,13 +111,6 @@ namespace UI.Desktop
             rep.ShowDialog();
         }
 
-
-        private void btnAlumnosInscripciones_Click(object sender, EventArgs e)
-        {
-            AlumnosInscripciones alumnosInscripciones = new AlumnosInscripciones();
-            alumnosInscripciones.ShowDialog();
-        }
-
         //Nuevo menu de opciones
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -187,6 +180,7 @@ namespace UI.Desktop
                 this.Show();
             }
         }
+
     }
 
 

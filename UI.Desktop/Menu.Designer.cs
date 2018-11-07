@@ -113,6 +113,18 @@
             this.mnuGeneral.Text = "Menu";
             // 
             // personasToolStripMenuItem
+            // btnReporteDocentes
+            // 
+            this.btnReporteDocentes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReporteDocentes.Location = new System.Drawing.Point(317, 422);
+            this.btnReporteDocentes.Name = "btnReporteDocentes";
+            this.btnReporteDocentes.Size = new System.Drawing.Size(144, 23);
+            this.btnReporteDocentes.TabIndex = 13;
+            this.btnReporteDocentes.Text = "Reporte Docentes";
+            this.btnReporteDocentes.UseVisualStyleBackColor = true;
+            this.btnReporteDocentes.Click += new System.EventHandler(this.btnReporteDocentes_Click);
+            // 
+            // lblBienvenido
             // 
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
