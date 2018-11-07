@@ -49,7 +49,7 @@ namespace UI.web
             set { this.ViewState["FormMode"] = value; }
         }
 
-        private Materia Entity
+        private Entidades.Materia Entity
         {
             get;
             set;
@@ -80,20 +80,20 @@ namespace UI.web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descMateriaTextBox.Text = this.Entity.DescMateria;
-            this.hsSemanalesTextBox.Text = this.Entity.HsSemanales;
-            this.hsTotalesTextBox.Text = this.Entity.HsTotales;
-            this.idPlanTextBox.Text = this.Entity.IdPlan;
+            this.hsSemanalesTextBox.Text = this.Entity.HsSemanales.ToString();
+            this.hsTotalesTextBox.Text = this.Entity.HsTotales.ToString();
+            this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
         }
 
-        private void LoadEntity(Materia materia)
+        private void LoadEntity(Entidades.Materia materia)
         {
             materia.DescMateria = this.descMateriaTextBox.Text;
-            materia.HsSemanales = this.hsSemanalesTextBox.Text;
-            materia.HsTotales = this.hsTotalesTextBox.Text;
-            materia.IdPlan = this.idPlanTextBox.Text;
+            materia.HsSemanales = int.Parse(this.hsSemanalesTextBox.Text);
+            materia.HsTotales = int.Parse(this.hsTotalesTextBox.Text);
+            materia.IdPlan = int.Parse(this.idPlanTextBox.Text);
         }
 
-        private void SaveEntity(Materia materia)
+        private void SaveEntity(Entidades.Materia materia)
         {
             this.Logic.Save(materia);
         }
@@ -129,7 +129,7 @@ namespace UI.web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Materia();
+                    this.Entity = new Entidades.Materia();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -139,7 +139,7 @@ namespace UI.web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Materia();
+                    this.Entity = new Entidades.Materia();
                     this.Entity.Id = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);

@@ -33,7 +33,7 @@
                     <asp:HyperLink CssClass="nav-link" ID="hlComisiones" runat="server" NavigateUrl="~/Comision.aspx">Comisiones</asp:HyperLink>
                 </li>
                 <li class="nav-item">
-                    <asp:HyperLink CssClass="nav-link" ID="Materias" runat="server" NavigateUrl="~/Materias.aspx">Materias</asp:HyperLink>
+                    <asp:HyperLink CssClass="nav-link" ID="Materias" runat="server" NavigateUrl="~/Materia.aspx">Materias</asp:HyperLink>
                 </li>
                 <li class="nav-item">
                     <asp:HyperLink CssClass="nav-link" ID="hlPersonas" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink>

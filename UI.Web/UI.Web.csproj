@@ -77,6 +77,7 @@
     <Content Include="Error.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Materia.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Site.Master" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materia.aspx.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materia.aspx.designer.cs">
+      <DependentUpon>Materia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
