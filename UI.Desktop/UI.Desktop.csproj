@@ -357,6 +357,10 @@
       <Project>{aa40d74a-f40a-4007-977e-52924bcb485d}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{2641ef79-75a6-4bb9-acba-caffeac8e1ec}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

@@ -14,9 +14,19 @@ namespace UI.Desktop
 {
     public partial class UsuarioDesktop : ApplicationForm
     {
+        public Entidades.Persona PersonaActual { get; set; }
+
+        private Usuario usuarioActual;
+
+        public Usuario UsuarioActual { get => usuarioActual; set => usuarioActual = value; }
+
+        PersonasLogic pl = new PersonasLogic();
+
         public UsuarioDesktop()
         {
             InitializeComponent();
+            Llenarcb();
+
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
@@ -25,13 +35,21 @@ namespace UI.Desktop
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        public void Llenarcb()
+        {
+            cbPersonas.DataSource = pl.GetAll();
+            cbPersonas.SelectedIndex = -1;
+        }
+
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             UsuarioLogic usuario = new UsuarioLogic();
             usuarioActual = usuario.GetOne(ID);
+            PersonaActual = pl.GetOne(UsuarioActual.Id_persona);
             this.MapearDeDatos();
         }
 
@@ -45,6 +63,8 @@ namespace UI.Desktop
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario; 
             this.txtEmail.Text = this.UsuarioActual.Email;
+            cbPersonas.Text = PersonaActual.Legajo.ToString();
+
             if (Modo == ModoForm.Baja){
                 this.btnAceptar.Text = "Eliminar";
             } else if(Modo == ModoForm.Consulta)
@@ -70,6 +90,9 @@ namespace UI.Desktop
             this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
             this.UsuarioActual.Email = this.txtEmail.Text;
             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+            PersonaActual = (Entidades.Persona) cbPersonas.SelectedItem;
+            UsuarioActual.Id_persona = PersonaActual.Id;
+
             if (Modo == ModoForm.Alta)
             {
                 this.usuarioActual.State = BusinessEntity.States.New;
@@ -97,26 +120,22 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            string mensaje = "";
-
-            if(this.txtNombre.Text.Trim() == "" || this.txtApellido.Text == "" || this.txtClave.Text == ""
-                || this.txtConfirmarClave.Text == "" || this.txtEmail.Text == "" || this.txtUsuario.Text == ""
-                || this.txtClave.Text != this.txtConfirmarClave.Text)
+            if(string.IsNullOrEmpty(txtNombre.Text.Trim()) || string.IsNullOrEmpty(txtApellido.Text.Trim()) || string.IsNullOrEmpty(txtClave.Text.Trim())
+                || string.IsNullOrEmpty(txtEmail.Text.Trim()) || string.IsNullOrEmpty(txtConfirmarClave.Text.Trim()) || string.IsNullOrEmpty(txtUsuario.Text.Trim()))
             {
-                mensaje += "Dato requerido";
-            }
-
-            if (this.txtEmail.Text == "") // !Util.Validaciones.EsMailValido(this.txtEmail.TextTrim()
-            {
-                mensaje += "Email invalido. Por favor valide el mismo";
-            }
-            if (String.IsNullOrWhiteSpace(mensaje))
-            {
-                this.Notificar("Error", mensaje, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No puede haber campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 
-            return true;
+            if (!Util.Validacion.ValidarEmail(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("El mail no es válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
             
         }
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons
@@ -129,9 +148,6 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
-        private Usuario usuarioActual;
-
-        public Usuario UsuarioActual { get => usuarioActual; set => usuarioActual = value; }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -145,16 +161,6 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
