@@ -115,7 +115,8 @@ namespace UI.web
         {
             if (this.IsEntitySelected)
             {
-                formActionsPanel.Visible = true;
+                this.formPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
@@ -150,14 +151,15 @@ namespace UI.web
                     break;
             }
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                formActionsPanel.Visible = true;
                 this.formPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.LoadForm(this.SelectedID);
                 this.EnableForm(false);
@@ -174,7 +176,7 @@ namespace UI.web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-            formActionsPanel.Visible = true;
+            this.formActionsPanel.Visible = true;
             this.formPanel.Visible = true;
             this.ClearForm();
             this.FormMode = FormModes.Alta;
@@ -186,6 +188,7 @@ namespace UI.web
             gridView.Enabled = true;
             this.ClearForm();
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
             this.LoadGrid();
         }
     }

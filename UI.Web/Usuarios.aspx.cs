@@ -130,8 +130,8 @@ namespace UI.web
         {
             if (this.IsEntitySelected)
             {
-                formActionsPanel.Visible = true;
                 this.formPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
                 this.EnableForm(true);
@@ -165,7 +165,8 @@ namespace UI.web
                     break;
                 }
             this.formPanel.Visible = false;
-            }
+            this.formActionsPanel.Visible = false;
+        }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
@@ -202,6 +203,7 @@ namespace UI.web
             gridView.Enabled = true;
             this.ClearForm();
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
             this.LoadGrid();
         }
     }

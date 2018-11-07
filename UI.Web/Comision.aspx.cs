@@ -183,6 +183,7 @@ namespace UI.web
                     break;
             }
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
         }
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
@@ -202,6 +203,7 @@ namespace UI.web
             gridView.Enabled = true;
             this.ClearForm();
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
             this.LoadGrid();
         }
 

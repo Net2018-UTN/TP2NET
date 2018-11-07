@@ -44,26 +44,28 @@
             this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.btnReporteAlumnos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnReporteAlumnos);
             this.panel1.Controls.Add(this.btnReporteDocentes);
             this.panel1.Controls.Add(this.lblBienvenido);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 412);
+            this.panel1.Size = new System.Drawing.Size(768, 436);
             this.panel1.TabIndex = 6;
             // 
             // btnReporteDocentes
             // 
             this.btnReporteDocentes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReporteDocentes.Location = new System.Drawing.Point(297, 113);
+            this.btnReporteDocentes.Location = new System.Drawing.Point(254, 269);
             this.btnReporteDocentes.Name = "btnReporteDocentes";
-            this.btnReporteDocentes.Size = new System.Drawing.Size(144, 23);
+            this.btnReporteDocentes.Size = new System.Drawing.Size(207, 23);
             this.btnReporteDocentes.TabIndex = 13;
             this.btnReporteDocentes.Text = "Reporte Docentes";
             this.btnReporteDocentes.UseVisualStyleBackColor = true;
@@ -113,18 +115,6 @@
             this.mnuGeneral.Text = "Menu";
             // 
             // personasToolStripMenuItem
-            // btnReporteDocentes
-            // 
-            this.btnReporteDocentes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReporteDocentes.Location = new System.Drawing.Point(317, 422);
-            this.btnReporteDocentes.Name = "btnReporteDocentes";
-            this.btnReporteDocentes.Size = new System.Drawing.Size(144, 23);
-            this.btnReporteDocentes.TabIndex = 13;
-            this.btnReporteDocentes.Text = "Reporte Docentes";
-            this.btnReporteDocentes.UseVisualStyleBackColor = true;
-            this.btnReporteDocentes.Click += new System.EventHandler(this.btnReporteDocentes_Click);
-            // 
-            // lblBienvenido
             // 
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
             this.personasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
@@ -198,11 +188,23 @@
             this.mnuPrincipal.TabIndex = 1;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
+            // btnReporteAlumnos
+            // 
+            this.btnReporteAlumnos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReporteAlumnos.Location = new System.Drawing.Point(254, 194);
+            this.btnReporteAlumnos.Name = "btnReporteAlumnos";
+            this.btnReporteAlumnos.Size = new System.Drawing.Size(207, 23);
+            this.btnReporteAlumnos.TabIndex = 14;
+            this.btnReporteAlumnos.Text = "Reporte Alumnos";
+            this.btnReporteAlumnos.UseVisualStyleBackColor = true;
+            this.btnReporteAlumnos.Visible = false;
+            this.btnReporteAlumnos.Click += new System.EventHandler(this.btnReporteAlumnos_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 436);
+            this.ClientSize = new System.Drawing.Size(768, 460);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mnuPrincipal);
             this.IsMdiContainer = true;
@@ -238,5 +240,6 @@
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
+        private System.Windows.Forms.Button btnReporteAlumnos;
     }
 }

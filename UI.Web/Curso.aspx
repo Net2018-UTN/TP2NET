@@ -6,7 +6,7 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White"
-            DataKeyNames ="ID">
+            DataKeyNames ="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged1">
             <Columns>
                 <asp:BoundField HeaderText="idMateria" DataField="idMateria" />
                 <asp:BoundField HeaderText="idComision" DataField="idComision" />
@@ -26,10 +26,14 @@
     <asp:Panel ID="formPanel" CssClass="row" Visible="false" runat="server">
         <asp:Panel runat="server" CssClass="col-md-6">
             <asp:Label ID="idMateriaLabel" runat="server" Text="idMateria: "></asp:Label>
-            <asp:TextBox ID="idMateriaTextBox" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataValueField="Id" Height="34px" Width="121px">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAll" TypeName="Negocio.MateriaLogic"></asp:ObjectDataSource>
             <br />
             <asp:Label ID="idComisionLabel" runat="server" Text="idComision: "></asp:Label>
-            <asp:TextBox ID="idComisionTextBox" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Id" DataValueField="Id">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetAll" TypeName="Negocio.ComisionLogic"></asp:ObjectDataSource>
             <br />
             <asp:Label ID="anioCalendarioLabel" runat="server" Text="anioCalenadario: "></asp:Label>
             <asp:TextBox ID="anioCalendarioTextBox" runat="server"></asp:TextBox>
@@ -40,7 +44,7 @@
         </asp:Panel>
     </asp:Panel>
 
-    <asp:Panel ID="formActionsPanel" runat="server">
+    <asp:Panel ID="formActionsPanel" runat="server" Visible="false">
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
         <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
     </asp:Panel>

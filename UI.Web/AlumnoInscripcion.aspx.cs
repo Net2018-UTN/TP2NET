@@ -166,10 +166,10 @@ namespace UI.web
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
-            alumnosInscripcionsGridView.Enabled = true;
+            this.alumnosInscripcionsGridView.Enabled = true;
             this.ClearForm();
             this.formPanel.Visible = false;
-            formActionsPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
             this.LoadGrid();
         }
 

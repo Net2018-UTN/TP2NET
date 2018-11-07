@@ -10,7 +10,7 @@
 namespace UI.web {
     
     
-    public partial class WebForm1 {
+    public partial class DocentesCursos {
         
         /// <summary>
         /// gridPanel control.
@@ -22,13 +22,13 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.Panel gridPanel;
         
         /// <summary>
-        /// gridView control.
+        /// gridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridView;
+        protected global::System.Web.UI.WebControls.GridView gridView1;
         
         /// <summary>
         /// gridActionsPanel control.
@@ -76,13 +76,31 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.Panel formPanel;
         
         /// <summary>
-        /// idMateriaLabel control.
+        /// nombreLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idMateriaLabel;
+        protected global::System.Web.UI.WebControls.Label nombreLabel;
+        
+        /// <summary>
+        /// nombreTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
+        
+        /// <summary>
+        /// apellidoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label apellidoLabel;
         
         /// <summary>
         /// DropDownList1 control.
@@ -94,31 +112,13 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// cursos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
-        /// idComisionLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idComisionLabel;
-        
-        /// <summary>
-        /// DropDownList2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.ObjectDataSource cursos;
         
         /// <summary>
         /// ObjectDataSource2 control.
@@ -130,40 +130,58 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
-        /// anioCalendarioLabel control.
+        /// emailLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label anioCalendarioLabel;
+        protected global::System.Web.UI.WebControls.Label emailLabel;
         
         /// <summary>
-        /// anioCalendarioTextBox control.
+        /// DropDownList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox anioCalendarioTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
         
         /// <summary>
-        /// cupoLabel control.
+        /// docentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cupoLabel;
+        protected global::System.Web.UI.WebControls.ObjectDataSource docentes;
         
         /// <summary>
-        /// cupoTextBox control.
+        /// ObjectDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cupoTextBox;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// habilitadoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label habilitadoLabel;
+        
+        /// <summary>
+        /// DropDownList3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
         
         /// <summary>
         /// formActionsPanel control.

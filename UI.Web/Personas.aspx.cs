@@ -174,7 +174,7 @@ namespace UI.web
             if (this.IsEntitySelected)
             {
                 this.formPanel.Visible = true;
-                formActionsPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.LoadForm(this.SelectedID);
                 this.EnableForm(false);
@@ -223,8 +223,8 @@ namespace UI.web
         {
             PersonasGridView.Enabled = true;
             this.ClearForm();
-            this.formPanel.Visible = false;
-            formActionsPanel.Visible = false;
+            this.formPanel.Visible = false;            
+            this.formActionsPanel.Visible = false;
             LoadGrid();
         }
 

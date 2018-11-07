@@ -18,7 +18,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdMateria = new SqlCommand("select * from materias", sqlConn);
-                SqlDataReader drMaterias = cmdMateria.ExecuteReader();
+                SqlDataReader drMaterias = cmdMateria.ExecuteReader();                
                 while (drMaterias.Read())
                 {
                     Materia mat = new Materia();

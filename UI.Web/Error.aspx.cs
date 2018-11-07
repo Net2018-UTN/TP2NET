@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace UI.Web
+namespace UI.web
 {
     public partial class Error : System.Web.UI.Page
     {

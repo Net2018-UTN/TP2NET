@@ -59,6 +59,7 @@ namespace UI.Desktop
                     break;
                 case 0:
                     btnReporteDocentes.Visible = true;
+                    btnReporteAlumnos.Visible = true;
                     break;
             }
            
@@ -182,6 +183,11 @@ namespace UI.Desktop
             }
         }
 
+        private void btnReporteAlumnos_Click(object sender, EventArgs e)
+        {
+            Reporte r = new Reporte();
+            r.ShowDialog();
+        }
     }
 
 

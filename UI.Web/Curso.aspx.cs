@@ -89,16 +89,16 @@ namespace UI.web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.idMateriaTextBox.Text = this.Entity.IdMateria.ToString();
-            this.idComisionTextBox.Text = this.Entity.IdComision.ToString();
+            this.DropDownList1.Text = this.Entity.IdMateria.ToString();
+            this.DropDownList2.Text = this.Entity.IdComision.ToString();
             this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
             this.cupoTextBox.Text = this.Entity.Cupo.ToString();
         }
 
         private void LoadEntity(Curso curso)
         {
-            curso.IdMateria = int.Parse(this.idMateriaTextBox.Text);
-            curso.IdComision = int.Parse(this.idComisionTextBox.Text);
+            curso.IdMateria = int.Parse(this.DropDownList1.Text);
+            curso.IdComision = int.Parse(this.DropDownList2.Text);
             curso.AnioCalendario = int.Parse(this.anioCalendarioTextBox.Text);
             curso.Cupo = int.Parse(this.cupoTextBox.Text);
         }
@@ -110,8 +110,8 @@ namespace UI.web
 
         private void EnableForm(bool enable)
         {
-            this.idMateriaTextBox.Enabled = enable;
-            this.idComisionTextBox.Enabled = enable;
+            this.DropDownList1.Enabled = enable;
+            this.DropDownList2.Enabled = enable;
             this.anioCalendarioTextBox.Enabled = enable;
             this.cupoTextBox.Enabled = enable;
             this.idMateriaLabel.Visible = enable;
@@ -125,6 +125,7 @@ namespace UI.web
             if (this.IsEntitySelected)
             {
                 this.formPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
                 this.EnableForm(true);
@@ -136,6 +137,7 @@ namespace UI.web
             if (this.IsEntitySelected)
             {
                 this.formPanel.Visible = true;
+                this.formActionsPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.LoadForm(this.SelectedID);
                 this.EnableForm(false);
@@ -145,6 +147,7 @@ namespace UI.web
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanel.Visible = true;
+            this.formActionsPanel.Visible = true;
             this.ClearForm();
             this.FormMode = FormModes.Alta;
             this.EnableForm(true);
@@ -152,8 +155,7 @@ namespace UI.web
 
         private void ClearForm()
         {
-            this.idMateriaTextBox.Text = string.Empty;
-            this.idComisionTextBox.Text = string.Empty;
+            
             this.anioCalendarioTextBox.Text = string.Empty;
             this.cupoTextBox.Text = string.Empty;
         }
@@ -190,6 +192,7 @@ namespace UI.web
                     break;
             }
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
@@ -197,7 +200,13 @@ namespace UI.web
             gridView.Enabled = true;
             this.ClearForm();
             this.formPanel.Visible = false;
+            this.formActionsPanel.Visible = false;
             this.LoadGrid();
+        }
+
+        protected void gridView_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            this.SelectedID = (int)this.gridView.SelectedValue;
         }
     }
 }
