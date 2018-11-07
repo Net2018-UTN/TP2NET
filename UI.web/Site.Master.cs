@@ -13,7 +13,28 @@ namespace UI.web
         {
             if (Session["tipoUsuario"].Equals(1))
             {
+                Planes.Visible = false;
                 hlUsuarios.Visible = false;
+                hlCursos.Visible = false;                
+                hlComisiones.Visible = false;                
+                Materias.Visible = false;
+                hlPersonas.Visible = false;
+                hlEspecialidades.Visible = false;
+                hlAlumnosInscripciones.Visible = false;
+                hlDocentesCursos.Visible = false;          
+
+            }
+            if (Session["tipoUsuario"].Equals(2))
+            {
+                Planes.Visible = false;
+                hlUsuarios.Visible = false;
+                hlCursos.Visible = false;
+                hlComisiones.Visible = false;
+                Materias.Visible = false;
+                hlPersonas.Visible = false;
+                hlEspecialidades.Visible = false;                
+                hlDocentesCursos.Visible = false;
+
             }
         }
     }
