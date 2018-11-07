@@ -92,7 +92,7 @@ namespace UI.Desktop
             personaActual.Direccion = this.txtDireccion.Text;
             personaActual.Email = this.txtEmail.Text;
             personaActual.Telefono = this.txtTelefono.Text;
-            personaActual.FechaNacimiento = Convert.ToDateTime(this.txtFechaNac.Text);
+            personaActual.FechaNacimiento = DateTime.Parse(this.txtFechaNac.Text);
             personaActual.Legajo = int.Parse(this.txtLegajo.Text);
             personaActual.TipoPersona = int.Parse(this.txtTipoPer.Text);
             

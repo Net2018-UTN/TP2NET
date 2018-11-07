@@ -74,9 +74,9 @@
     <None Include="packages.config" />
     <Content Include="Comision.aspx" />
     <Content Include="DocentesCursos.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Materia.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Site.Master" />
@@ -124,6 +124,13 @@
     <Compile Include="DocentesCursos.aspx.designer.cs">
       <DependentUpon>DocentesCursos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,13 +144,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Materia.aspx.cs">
-      <DependentUpon>Materia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Materia.aspx.designer.cs">
-      <DependentUpon>Materia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
@@ -211,7 +211,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50231</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

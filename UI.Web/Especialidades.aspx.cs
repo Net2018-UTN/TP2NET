@@ -29,7 +29,15 @@ namespace UI.web
             this.gridView.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
-        {                   
+        {
+            if (Session["tipoUsuario"].Equals(1))
+            {
+                Response.Redirect("/Error.aspx");
+            }
+            if (Session["tipoUsuario"].Equals(2))
+            {
+                Response.Redirect("/Error.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 this.LoadGrid();

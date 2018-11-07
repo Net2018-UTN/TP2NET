@@ -23,9 +23,21 @@ namespace UI.Desktop
 
         public Usuario usuario;
 
-        public Usuario Usuario { get; set; }
+        public Usuario Usuario
+        {
+            get
+            {
+
+                if(usuario == null)
+                {
+                    usuario = new Usuario();
+                }
+                return usuario;
+            }
+        }
 
         PersonasLogic pl;
+
         public PersonasLogic Pl
         {
             get
@@ -38,47 +50,31 @@ namespace UI.Desktop
             }
         }
 
-        private Persona persona { get; set; }
-
         private void formLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 usuario = ul.GetUsuario(txtUsuario.Text);
-                if(usuario.NombreUsuario != txtUsuario.Text)
+                if(string.IsNullOrEmpty(txtUsuario.Text.Trim()) || string.IsNullOrEmpty(txtPass.Text.Trim()))
                 {
-                    MessageBox.Show("El usuario es incorrecto", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe ingresar usuarios y contraseña", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else if (!this.ValidarPass(usuario.Clave))
+
+                else if(usuario.NombreUsuario != txtUsuario.Text || usuario.Clave != txtPass.Text || usuario.Habilitado == false)
                 {
-                    MessageBox.Show("La contraseña no es correcta", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (!usuario.Habilitado)
-                {
-                    MessageBox.Show("El usuario no está habilitado", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El usuario y/o clave es incorrecto o no se encuentra habilitado", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     this.DialogResult = DialogResult.OK;
-                }
-                
+                }           
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
         }
-
-        private bool ValidarPass(string clave)
-        {
-            if (this.txtPass.Text.Equals(clave))
-            {
-                return true;
-            }
-            return false;
-        }
-
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

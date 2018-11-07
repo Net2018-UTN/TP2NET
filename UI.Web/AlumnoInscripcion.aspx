@@ -32,7 +32,11 @@
             <asp:ListItem Text="Seleccionar"/>
         </asp:DropDownList>
         <asp:RequiredFieldValidator ID="rfvAlumno" runat="server" ErrorMessage="Debe seleccionar una opcion" ForeColor="Red" ControlToValidate="ddlAlumnos" ValidationGroup="AllValidators"></asp:RequiredFieldValidator>
-        <asp:ObjectDataSource ID="alumnos" runat="server" SelectMethod="GetAll" TypeName="Negocio.PersonasLogic"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="alumnos" runat="server" SelectMethod="GetByTipo" TypeName="Negocio.PersonasLogic">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="1" Name="tipo" Type="Int32" />
+            </SelectParameters>
+         </asp:ObjectDataSource>
         <br />
         <asp:Label ID="Label1" runat="server" Text="Curso"></asp:Label>
         <asp:DropDownList ID="ddlCursos" runat="server" DataSourceID="cursos" DataTextField="Id" DataValueField="Id" AppendDataBoundItems="True">

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
@@ -46,7 +47,11 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbPersonas = new System.Windows.Forms.ComboBox();
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -73,6 +78,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbPersonas, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -83,51 +90,49 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(373, 148);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(393, 181);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtConfirmarClave
             // 
-            this.txtConfirmarClave.Location = new System.Drawing.Point(258, 81);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(292, 81);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmarClave.Size = new System.Drawing.Size(98, 20);
             this.txtConfirmarClave.TabIndex = 16;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(53, 81);
+            this.txtClave.Location = new System.Drawing.Point(102, 81);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(100, 20);
+            this.txtClave.Size = new System.Drawing.Size(97, 20);
             this.txtClave.TabIndex = 15;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(258, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(292, 55);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(98, 20);
             this.txtUsuario.TabIndex = 14;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(53, 55);
+            this.txtEmail.Location = new System.Drawing.Point(102, 55);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(97, 20);
             this.txtEmail.TabIndex = 13;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(258, 29);
+            this.txtApellido.Location = new System.Drawing.Point(292, 29);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.Size = new System.Drawing.Size(98, 20);
             this.txtApellido.TabIndex = 12;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(53, 29);
+            this.txtNombre.Location = new System.Drawing.Point(102, 29);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(97, 20);
             this.txtNombre.TabIndex = 11;
             // 
             // label1
@@ -169,7 +174,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(171, 26);
+            this.label5.Location = new System.Drawing.Point(205, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 5;
@@ -178,7 +183,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 52);
+            this.label6.Location = new System.Drawing.Point(205, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 6;
@@ -187,7 +192,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(171, 78);
+            this.label7.Location = new System.Drawing.Point(205, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 7;
@@ -196,7 +201,7 @@
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(171, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(205, 3);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 8;
@@ -205,15 +210,15 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(53, 3);
+            this.txtID.Location = new System.Drawing.Point(102, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(97, 20);
             this.txtID.TabIndex = 9;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(171, 107);
+            this.btnAceptar.Location = new System.Drawing.Point(205, 107);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 17;
@@ -223,7 +228,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(258, 107);
+            this.btnCancelar.Location = new System.Drawing.Point(292, 107);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 18;
@@ -231,11 +236,35 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Alumnos/Docente";
+            // 
+            // cbPersonas
+            // 
+            this.cbPersonas.DataSource = this.personaBindingSource;
+            this.cbPersonas.DisplayMember = "Legajo";
+            this.cbPersonas.FormattingEnabled = true;
+            this.cbPersonas.Location = new System.Drawing.Point(102, 107);
+            this.cbPersonas.Name = "cbPersonas";
+            this.cbPersonas.Size = new System.Drawing.Size(97, 21);
+            this.cbPersonas.TabIndex = 20;
+            this.cbPersonas.ValueMember = "Id";
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataSource = typeof(Entidades.Persona);
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 148);
+            this.ClientSize = new System.Drawing.Size(393, 181);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -243,6 +272,7 @@
             this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +297,8 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbPersonas;
+        private System.Windows.Forms.BindingSource personaBindingSource;
     }
 }

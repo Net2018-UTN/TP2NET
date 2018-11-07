@@ -21,11 +21,6 @@ namespace UI.Desktop
             this.dgvUsuarios.AutoGenerateColumns = false;
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Listar();

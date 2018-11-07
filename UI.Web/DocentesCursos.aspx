@@ -32,9 +32,13 @@
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetAll" TypeName="Negocio.CursoLogic"></asp:ObjectDataSource>
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="Id Docente:"></asp:Label>
-        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="docentes" DataTextField="Nombre" DataValueField="Id">
+        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="docentes" DataTextField="Id" DataValueField="Id">
         </asp:DropDownList>
-        <asp:ObjectDataSource ID="docentes" runat="server" SelectMethod="GetAll" TypeName="Negocio.PersonasLogic"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="docentes" runat="server" SelectMethod="GetByTipo" TypeName="Negocio.PersonasLogic">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="2" Name="tipo" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetByTipo" TypeName="Negocio.PersonasLogic">
             <SelectParameters>
                 <asp:Parameter DefaultValue="2" Name="tipo" Type="Int32" />
