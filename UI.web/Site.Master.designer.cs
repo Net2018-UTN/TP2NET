@@ -49,6 +49,7 @@ namespace UI.web {
         protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
         
         /// <summary>
+
         /// Control hlCursos.
         /// </summary>
         /// <remarks>
