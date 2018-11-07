@@ -26,6 +26,7 @@ namespace Data.Database
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Email = (string)drUsuarios["email"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Id_persona = (int)drUsuarios["id_persona"];
 
                     usuarios.Add(usr);
                 }
@@ -123,6 +124,7 @@ namespace Data.Database
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Email = (string)drUsuarios["email"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Id_persona = (int)drUsuarios["id_persona"];
                 }
 
                 drUsuarios.Close();

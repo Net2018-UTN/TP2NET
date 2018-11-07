@@ -44,6 +44,7 @@ namespace UI.Desktop
                     especialidadesToolStripMenuItem.Visible = false;
                     cursosToolStripMenuItem.Visible = false;
                     comisionesToolStripMenuItem.Visible = false;
+                    inscripcionesToolStripMenuItem.Visible = false;
                     break;
                 case 2:
                     personasToolStripMenuItem.Visible = false;
